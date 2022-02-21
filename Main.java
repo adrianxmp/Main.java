@@ -47,6 +47,22 @@ public class Main {
         }
 
     }
+    /**
+     * @author Robert Engel, T03, Feb 21 2022
+     * This function returns the data of a specific game as a String, for easier access
+     * @param checkYear the year within the game which is being retrieved, should be a 4-digit positive int
+     * @param checkGame the game name which is being retrieved, should be along the lines of "Home vs. Away on Date"
+     * @return A String of Game Data, see addGame for the specifics
+     */
+    public static String[] getGameData(int checkYear, String checkGame){
+        if (Year.containsKey(Integer.toString(checkYear)) == true){
+            if(Year.get(Integer.toString(checkYear)).containsKey(checkGame) == true){
+                return Year.get(Integer.toString(checkYear)).get(checkGame);
+            }
+        }
+            System.out.println("Failed retrieval, game or year does not exist!");
+            return null;
+    }
     public static void main(String[] args) {
 
     }
