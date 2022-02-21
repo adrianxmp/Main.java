@@ -1,8 +1,11 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
     public static HashMap<String, HashMap<String, String[]>> Year = new HashMap<String, HashMap<String, String[]>>();
+    public static Scanner input = new Scanner(System.in);
     /**
      * @author Robert Engel, T03
      * This function adds a new HashMap representing a new year to be added, it will NOT add a new value if the
@@ -63,7 +66,67 @@ public class Main {
             System.out.println("Failed retrieval, game or year does not exist!");
             return null;
     }
+    /**
+     * @author Robert Engel, T03, Feb 21 2022
+     * The main part of the menu system, breaking it up for simplicity of finding specific parts of the menu.
+     */
+    public static void mainMenu(){
+        int choice = 0;
+        System.out.println("Welcome to the Premier League Data Repository Main Menu!\nPlease Input a number to choose your action");
+        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu");
+        while (choice == 0){
+            try{
+                System.out.print("Please Input a number:");
+                choice = input.nextInt();
+                if (choice != 1 && choice != 2 && choice != 3 && choice != 4){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        switch (choice){
+            case 1:
+                yearMenu();
+                break;
+            case 2:
+                gameMenu();
+                break;
+            case 3:
+                generalMenu();
+                break;
+            case 4:
+                specialMenu();
+                break;
+        }
+    }
+    public static void yearMenu(){
+        System.out.print("Years are formatted as a 4-digit positive number\nPlease Input the new Year you would like to create:");
+        int choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input a number from 1000 to 9999:");
+                choice = input.nextInt();
+                if (choice < 1000 || choice > 9999){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        addYear(choice);
+    }
+    public static void gameMenu(){
+        int choice = 0;
+        String[] gameData = new String[10];
+    }
     public static void main(String[] args) {
-
+        mainMenu();
     }
 }
