@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Main {
-    public static HashMap<String, HashMap> Year = new HashMap<String, HashMap>();
+    public static HashMap<String, HashMap<String, String[]>> Year = new HashMap<String, HashMap<String, String[]>>();
     /**
      * @author Robert Engel, T03
      * This function adds a new HashMap representing a new year to be added, it will NOT add a new value if the
@@ -38,11 +38,8 @@ public class Main {
      */
     public static void addGame(int checkYear, String[] gameData){
         if( Year.containsKey(Integer.toString(checkYear)) == true){
-            String Gamekey = gameData[1] + " vs. " + gameData[2] + " on " + gameData[9];
-            HashMap<String, String[]> newMap = new HashMap<String, String[]>();
-            newMap.putAll(Year.get(Integer.toString(checkYear)));
-            newMap.put(Gamekey, gameData);
-            Year.put(Integer.toString(checkYear), newMap);
+            String gameKey = gameData[1] + " vs. " + gameData[2] + " on " + gameData[9];
+            Year.get(Integer.toString(checkYear)).put(gameKey, gameData);
 
         }
         else{
