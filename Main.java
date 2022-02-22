@@ -13,7 +13,7 @@ public class Main {
      * @param newYear the new year to be added, should be 4-digit positive integer
      */
     public static void addYear(int newYear){
-        if (Year.containsKey(newYear) == true){
+        if (Year.containsKey(Integer.toString(newYear)) == true){
             System.out.println("Year already Exists! Year Not Added");
         }
         else{
@@ -194,7 +194,7 @@ public class Main {
      * the part of the menu where you enter in a new year
      * */
     public static void yearMenu(){
-        System.out.print("Years are formatted as a 4-digit positive number\nPlease Input the new Year you would like to create:");
+        System.out.println("Years are formatted as a 4-digit positive number");
         int choice = 0;
         while (choice == 0){
             try{
@@ -237,6 +237,7 @@ public class Main {
         }
         gameData[0] = sChoice;
         sChoice = "";
+        input.next();
         while (sChoice.isEmpty() == true){
             try{
                 System.out.print("Please Input the Away Team:");
@@ -347,13 +348,13 @@ public class Main {
             }
         }
         gameData[7] = Integer.toString(choice);
-        if(Integer.parseInt(gameData[7]) > Integer.parseInt(gameData[8])){
+        if(Integer.parseInt(gameData[6]) > Integer.parseInt(gameData[7])){
             gameData[8] = "Home";
         }
-        else if(Integer.parseInt(gameData[7]) < Integer.parseInt(gameData[8])){
+        else if(Integer.parseInt(gameData[6]) < Integer.parseInt(gameData[7])){
             gameData[8] = "Away";
         }
-        else if(Integer.parseInt(gameData[7]) == Integer.parseInt(gameData[8])){
+        else if(Integer.parseInt(gameData[6]) == Integer.parseInt(gameData[7])){
             gameData[8] = "Tie";
         }
         choice = 0;
@@ -372,6 +373,7 @@ public class Main {
             }
         }
         int gameYear = choice;
+        choice = 0;
         while (choice == 0){
             try{
                 System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.:");
@@ -387,6 +389,7 @@ public class Main {
             }
         }
         int gameMonth = choice;
+        choice = 0;
         while (choice == 0){
             try{
                 System.out.print("Please Input the day the game was played:");
@@ -432,18 +435,23 @@ public class Main {
         switch (choice){
             case 1:
                 //Total number of shots in a game function
+                generalMenu();
                 break;
             case 2:
                 //total number of fouls in a game function
+                generalMenu();
                 break;
             case 3:
                 //print all years function
+                generalMenu();
                 break;
             case 4:
                 //print all games in a year function
+                generalMenu();
                 break;
             case 5:
                 //print all games ever function
+                generalMenu();
                 break;
             case 6:
                 mainMenu();
@@ -475,15 +483,19 @@ public class Main {
         switch (choice){
             case 1:
                 //Top 5 games for fouls function
+                specialMenu();
                 break;
             case 2:
                 //top 5 games for goals function
+                specialMenu();
                 break;
             case 3:
                 //top 5 teams for wins function
+                specialMenu();
                 break;
             case 4:
                 //top 5 teams for shots taken function
+                specialMenu();
                 break;
             case 5:
                 mainMenu();
