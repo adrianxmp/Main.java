@@ -502,6 +502,9 @@ public class Main {
                 break;
         }
     }
+    /**
+     * Not much here, just the menu program call
+     * */
     public static void main(String[] args) {
         mainMenu();
     }
