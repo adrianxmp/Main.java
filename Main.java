@@ -108,7 +108,7 @@ public class Main {
         int choice = 0;
         while (choice == 0){
             try{
-                System.out.print("Please Input a number from 1000 to 9999:");
+                System.out.print("Please Input the Year:");
                 choice = input.nextInt();
                 if (choice < 1000 || choice > 9999){
                     choice = 0;
@@ -121,10 +121,196 @@ public class Main {
             }
         }
         addYear(choice);
+        mainMenu();
     }
     public static void gameMenu(){
         int choice = 0;
+        String sChoice = "";
         String[] gameData = new String[10];
+        System.out.println("Teams have their first letter capitalized, no periods for abbreviations");
+        while (sChoice.isEmpty() == true){
+            try{
+                System.out.print("Please Input the Home Team:");
+                sChoice = input.next();
+                if (sChoice.isEmpty() == true){
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[0] = sChoice;
+        sChoice = "";
+        while (sChoice.isEmpty() == true){
+            try{
+                System.out.print("Please Input the Away Team:");
+                sChoice = input.next();
+                if (sChoice.isEmpty() == true){
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[1] = sChoice;
+        sChoice = "";
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Home Team Fouls:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[2] = Integer.toString(choice);
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Away Team Fouls:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[3] = Integer.toString(choice);
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Home Team Shots:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[4] = Integer.toString(choice);
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Away Team Shots:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[5] = Integer.toString(choice);
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Home Team Goals:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[6] = Integer.toString(choice);
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the Away Team Goals:");
+                choice = input.nextInt();
+                if (choice < 0){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        gameData[7] = Integer.toString(choice);
+        if(Integer.parseInt(gameData[7]) > Integer.parseInt(gameData[8])){
+            gameData[8] = "Home";
+        }
+        else if(Integer.parseInt(gameData[7]) < Integer.parseInt(gameData[8])){
+            gameData[8] = "Away";
+        }
+        else if(Integer.parseInt(gameData[7]) == Integer.parseInt(gameData[8])){
+            gameData[8] = "Tie";
+        }
+        choice = 0;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the year the game was played:");
+                choice = input.nextInt();
+                if (choice < 1000 || choice > 9999){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        int gameYear = choice;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.:");
+                choice = input.nextInt();
+                if (choice < 1 || choice > 12){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        int gameMonth = choice;
+        while (choice == 0){
+            try{
+                System.out.print("Please Input the day the game was played:");
+                choice = input.nextInt();
+                if (choice < 1 || choice > 31){
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+        }
+        int gameDay = choice;
+        String Date = gameYear + "-" + gameMonth + "-" + gameDay;
+        gameData[9] = Date;
+        mainMenu();
     }
     public static void main(String[] args) {
         mainMenu();
