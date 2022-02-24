@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static HashMap<String, HashMap<String, String[]>> Year = new HashMap<String, HashMap<String, String[]>>();
@@ -504,6 +501,14 @@ public class Main {
         assert awayFouls != null;
         assert homeFouls != null;
         return homeFouls[2] + awayFouls[3];
+    }
+
+    public static Set<String> allYears() {
+        return Year.keySet();
+    }
+
+    public static Set<String> allGameYears(String gameYear) {
+        return Year.get(gameYear).keySet();
     }
 
     /**
