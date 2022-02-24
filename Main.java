@@ -485,6 +485,13 @@ public class Main {
         }
     }
 
+    /**
+     * This function returns the total shots of each team in a particular game
+     * @param gameYear Year of the game that the user wants to see the total shots
+     * @param gameChecker Game name that the user want to see the total shots. eg "Home vs Away on Date"
+     * @return Returns a String of total shots of each team in a game
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
     public static String totalShots(int gameYear, String gameChecker) {
         String[] homeShots;
         String[] awayShots;
@@ -495,6 +502,13 @@ public class Main {
         return homeShots[4] + awayShots[5];
     }
 
+    /**
+     * This function returns the total fouls of each team in a particular game
+     * @param gameYear Year of the game that the user wants to see the total fouls
+     * @param gameChecker Game name that the user want to see the total fouls
+     * @return Returns a String of the total fouls of each team in game
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
     public static String totalFouls(int gameYear, String gameChecker) {
         String[] homeFouls = getGameData(gameYear, gameChecker);
         String[] awayFouls = getGameData(gameYear, gameChecker);
@@ -503,10 +517,21 @@ public class Main {
         return homeFouls[2] + awayFouls[3];
     }
 
+    /**
+     * This function displays every year in the database
+     * @return Returns every year in the database in a form of key set
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
     public static Set<String> allYears() {
         return Year.keySet();
     }
 
+    /**
+     * This function displays every game in a year
+     * @param gameYear Year that the user is looking for
+     * @return Returns every game in a year
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
     public static Set<String> allGameYears(String gameYear) {
         return Year.get(gameYear).keySet();
     }
