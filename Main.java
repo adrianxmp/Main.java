@@ -487,7 +487,8 @@ public class Main {
 
     /**
      * This function returns the total shots of each team in a particular game
-     * @param gameYear Year of the game that the user wants to see the total shots
+     *
+     * @param gameYear    Year of the game that the user wants to see the total shots
      * @param gameChecker Game name that the user want to see the total shots. eg "Home vs Away on Date"
      * @return Returns a String of total shots of each team in a game
      * @author Adrian Ponce, Feb 24, 2022, T03
@@ -504,7 +505,8 @@ public class Main {
 
     /**
      * This function returns the total fouls of each team in a particular game
-     * @param gameYear Year of the game that the user wants to see the total fouls
+     *
+     * @param gameYear    Year of the game that the user wants to see the total fouls
      * @param gameChecker Game name that the user want to see the total fouls
      * @return Returns a String of the total fouls of each team in game
      * @author Adrian Ponce, Feb 24, 2022, T03
@@ -519,6 +521,7 @@ public class Main {
 
     /**
      * This function displays every year in the database
+     *
      * @return Returns every year in the database in a form of key set
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
@@ -528,12 +531,27 @@ public class Main {
 
     /**
      * This function displays every game in a year
+     *
      * @param gameYear Year that the user is looking for
      * @return Returns every game in a year
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
     public static Set<String> allGameYears(String gameYear) {
         return Year.get(gameYear).keySet();
+    }
+
+    /**
+     * This function returns all the games that was in the database
+     *
+     * @return Returns all the year of the game which contains all the games ever played
+     * @author Adrian Ponce, Feb 25, 2022, T03
+     */
+    public static StringBuilder allGamesEverPlayed() {
+        StringBuilder games = new StringBuilder();
+        for (Map.Entry<String, HashMap<String, String[]>> entry : Year.entrySet()) {
+            games.append(entry.getKey()).append(entry.getValue());
+        }
+        return games;
     }
 
     /**
