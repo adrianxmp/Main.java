@@ -39,7 +39,7 @@ public class Main {
      */
     public static void addGame(int checkYear, String[] gameData) {
         if (Year.containsKey(Integer.toString(checkYear)) == true) {
-            String gameKey = gameData[1] + " vs. " + gameData[2] + " on " + gameData[9];
+            String gameKey = gameData[0] + " vs. " + gameData[1] + " on " + gameData[9];
             Year.get(Integer.toString(checkYear)).put(gameKey, gameData);
 
         } else {
@@ -65,7 +65,7 @@ public class Main {
         return null;
     }
 
-    public static String findGame() {
+    public static String[] findGame() {
         int choice = 0;
         String sChoice = "";
         System.out.println("Teams have their first letter capitalized, no periods for abbreviations");
@@ -83,6 +83,7 @@ public class Main {
         }
         String homeTeam = sChoice;
         sChoice = "";
+        input.nextLine();
         while (sChoice.isEmpty() == true) {
             try {
                 System.out.print("Please Input the Away Team:");
@@ -92,7 +93,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input! Please Try Again!");
-                input.next();
+                input.nextLine();
             }
         }
         String awayTeam = sChoice;
@@ -111,9 +112,10 @@ public class Main {
             }
         }
         int gameYear = choice;
+        choice = 0;
         while (choice == 0) {
             try {
-                System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.:");
+                System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.):");
                 choice = input.nextInt();
                 if (choice < 1 || choice > 12) {
                     choice = 0;
@@ -125,6 +127,7 @@ public class Main {
             }
         }
         int gameMonth = choice;
+        choice = 0;
         while (choice == 0) {
             try {
                 System.out.print("Please Input the day the game was played:");
@@ -141,7 +144,8 @@ public class Main {
         int gameDay = choice;
         String Date = gameYear + "-" + gameMonth + "-" + gameDay;
         String foundGame = homeTeam + " vs. " + awayTeam + " on " + Date;
-        return foundGame;
+        String[] foundGameData = {foundGame, Integer.toString(gameYear)};
+        return foundGameData;
     }
 
     /**
@@ -151,12 +155,12 @@ public class Main {
     public static void mainMenu() {
         int choice = 0;
         System.out.println("Welcome to the Premier League Database Main Menu!\nPlease Input a number to choose your action");
-        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Quit the program");
+        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Create Test Data\n6. Quit the program");
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
                 choice = input.nextInt();
-                if (choice < 1 || choice > 5) {
+                if (choice < 1 || choice > 6) {
                     choice = 0;
                     System.out.println("Invalid Input, Please Try again!");
                 }
@@ -179,6 +183,9 @@ public class Main {
                 specialMenu();
                 break;
             case 5:
+                TestData();
+                break;
+            case 6:
                 System.exit(0);
                 break;
         }
@@ -231,7 +238,7 @@ public class Main {
         }
         gameData[0] = sChoice;
         sChoice = "";
-        input.next();
+        input.nextLine();
         while (sChoice.isEmpty() == true) {
             try {
                 System.out.print("Please Input the Away Team:");
@@ -360,7 +367,7 @@ public class Main {
         choice = 0;
         while (choice == 0) {
             try {
-                System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.:");
+                System.out.print("Please Input the month the game was played, as a number (1 = January, 2 = February, etc.):");
                 choice = input.nextInt();
                 if (choice < 1 || choice > 12) {
                     choice = 0;
@@ -401,6 +408,7 @@ public class Main {
         System.out.println("Please Input a Number to choose your action");
         System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the Main Menu");
         int choice = 0;
+        String[] GameFound;
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
@@ -416,23 +424,42 @@ public class Main {
         }
         switch (choice) {
             case 1:
-                //Total number of shots in a game function
+                GameFound = findGame();
+                System.out.println("The game had " + totalShots(Integer.parseInt(GameFound[1]), GameFound[0]) + " shots");
                 generalMenu();
                 break;
             case 2:
-                //total number of fouls in a game function
+                GameFound = findGame();
+                System.out.println("The game had " + totalFouls(Integer.parseInt(GameFound[1]), GameFound[0]) + " fouls");
                 generalMenu();
                 break;
             case 3:
-                //print all years function
+                System.out.println(allYears());
                 generalMenu();
                 break;
             case 4:
-                //print all games in a year function
+                choice = 0;
+                while (choice == 0) {
+                    try {
+                        System.out.print("Please Input the year you would like to see:");
+                        choice = input.nextInt();
+                        if (choice < 1000 || choice > 9999) {
+                            choice = 0;
+                            System.out.println("Invalid Input, Please Try again!");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input! Please Try Again!");
+                        input.next();
+                    }
+                }
+                int gameYear = choice;
+                if (Year.containsKey(Integer.toString(choice)) == true){
+                    System.out.println("All games for " + gameYear + " are " + allGameYears(Integer.toString(gameYear)));
+                }
                 generalMenu();
                 break;
             case 5:
-                //print all games ever function
+                System.out.println(allGamesEverPlayed());
                 generalMenu();
                 break;
             case 6:
@@ -447,7 +474,7 @@ public class Main {
      */
     public static void specialMenu() {
         System.out.println("Please Input a Number to choose your action");
-        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for goals\n3.Print the top 5 teams for wins\n4. Print the top 5 teams for shots taken\n5.Return to the Main Menu");
+        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for shots\n3.Print the top 5 games for goals\n4.Print how many games ended in a tie\n5.Return to the Main Menu");
         int choice = 0;
         while (choice == 0) {
             try {
@@ -464,19 +491,19 @@ public class Main {
         }
         switch (choice) {
             case 1:
-                //Top 5 games for fouls function
+                System.out.println("The top 5 amount of fouls in a game are " + topTeamFouls());
                 specialMenu();
                 break;
             case 2:
-                //top 5 games for goals function
+                System.out.println("The top 5 amount of shots in a game are " + topTeamShots());
                 specialMenu();
                 break;
             case 3:
-                //top 5 teams for wins function
+                System.out.println("The top 5 amount of goals in a game are " + topTeamGoals());
                 specialMenu();
                 break;
             case 4:
-                //top 5 teams for shots taken function
+                System.out.println(gamesWithATie() + " Games ended in a tie");
                 specialMenu();
                 break;
             case 5:
@@ -484,23 +511,56 @@ public class Main {
                 break;
         }
     }
-
+    /**
+     * Creates a bunch of test data within the program, for demo purposes
+     * @author Robert Engel, T03, Feb 28 2022
+     * */
+    public static void TestData(){
+        addYear(2020);
+        addYear(2021);
+        addYear(2022);
+        String[] game1 = {"Manchester", "Glasborough", "22", "33", "11", "18", "5", "7", "Home", "2020-1-1"};
+        String[] game2 = {"Manchester", "Glasborough", "23", "34", "12", "19", "7", "5", "Away", "2020-1-2"};
+        String[] game3 = {"Manchester", "Glasborough", "24", "35", "13", "20", "5", "5", "Tie", "2020-1-3"};
+        String[] game4 = {"Manchester", "Glasborough", "25", "36", "14", "21", "8", "6", "Home", "2021-1-1"};
+        String[] game5 = {"Manchester", "Glasborough", "26", "37", "15", "22", "9", "7", "Away", "2021-1-2"};
+        String[] game6 = {"Manchester", "Glasborough", "27", "38", "16", "23", "10", "10", "Tie", "2021-1-3"};
+        String[] game7 = {"Manchester", "Glasborough", "28", "39", "17", "24", "5", "7", "Home", "2022-1-1"};
+        String[] game8 = {"Manchester", "Glasborough", "29", "40", "18", "25", "7", "5", "Away", "2022-1-2"};
+        String[] game9 = {"Manchester", "Glasborough", "21", "41", "19", "26", "5", "5", "Tie", "2022-1-3"};
+        addGame(2020, game1);
+        addGame(2020, game2);
+        addGame(2020, game3);
+        addGame(2021, game4);
+        addGame(2021, game5);
+        addGame(2021, game6);
+        addGame(2022, game7);
+        addGame(2022, game8);
+        addGame(2022, game9);
+        System.out.println("Test Data Activated!");
+        mainMenu();
+    }
     /**
      * This function returns the total shots of each team in a particular game
      *
      * @param gameYear    Year of the game that the user wants to see the total shots
      * @param gameChecker Game name that the user want to see the total shots. eg "Home vs Away on Date"
-     * @return Returns a String of total shots of each team in a game
+     * @return Returns an integer of total shots of each team in a game
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
-    public static String totalShots(int gameYear, String gameChecker) {
+    public static int totalShots(int gameYear, String gameChecker) {
         String[] homeShots;
         String[] awayShots;
         homeShots = getGameData(gameYear, gameChecker);
         awayShots = getGameData(gameYear, gameChecker);
-        assert awayShots != null;
-        assert homeShots != null;
-        return homeShots[4] + awayShots[5];
+        if (homeShots != null && awayShots != null) {
+            int shotsTotal = Integer.parseInt(homeShots[4]) + Integer.parseInt(awayShots[5]);
+            return shotsTotal;
+        }
+        else{
+            System.out.println("Error Occured! Game Not Found!");
+            return 0;
+        }
     }
 
     /**
@@ -508,15 +568,20 @@ public class Main {
      *
      * @param gameYear    Year of the game that the user wants to see the total fouls
      * @param gameChecker Game name that the user want to see the total fouls
-     * @return Returns a String of the total fouls of each team in game
+     * @return Returns an integer of the total fouls of each team in game
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
-    public static String totalFouls(int gameYear, String gameChecker) {
+    public static int totalFouls(int gameYear, String gameChecker) {
         String[] homeFouls = getGameData(gameYear, gameChecker);
         String[] awayFouls = getGameData(gameYear, gameChecker);
-        assert awayFouls != null;
-        assert homeFouls != null;
-        return homeFouls[2] + awayFouls[3];
+        if (homeFouls != null && awayFouls != null) {
+            int foulsTotal = Integer.parseInt(homeFouls[2]) + Integer.parseInt(homeFouls[3]);
+            return foulsTotal;
+        }
+        else{
+            System.out.println("Error Occured! Game Not Found!");
+            return 0;
+        }
     }
 
     /**
@@ -546,12 +611,91 @@ public class Main {
      * @return Returns all the year of the game which contains all the games ever played
      * @author Adrian Ponce, Feb 25, 2022, T03
      */
-    public static StringBuilder allGamesEverPlayed() {
-        StringBuilder games = new StringBuilder();
+    public static List<String> allGamesEverPlayed() {
+        ArrayList<String> games = new ArrayList<String>();
         for (Map.Entry<String, HashMap<String, String[]>> entry : Year.entrySet()) {
-            games.append(entry.getKey()).append(entry.getValue());
+            games.add(String.valueOf(entry.getValue().keySet()));
         }
         return games;
+    }
+
+    /**
+     * This function loops through all the games and returns the top 5 games that has most team fouls
+     *
+     * @return Returns the top 5 fouls in a list of string
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
+    public static List<String> topTeamFouls() {
+        ArrayList<String> fouls = new ArrayList<String>();
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                fouls.add(inner.getValue()[2]);
+                fouls.add(inner.getValue()[3]);
+            }
+        }
+        Collections.sort(fouls, Collections.reverseOrder());
+        List<String> top5fouls = fouls.subList(0, 5);
+        return top5fouls;
+    }
+
+    /**
+     * This function loops through all the games and returns the top 5 games that has most team shots
+     *
+     * @return Returns the top 5 team shots in a list of string
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
+    public static List<String> topTeamShots() {
+        ArrayList<String> shots = new ArrayList<String>();
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                shots.add(inner.getValue()[4]);
+                shots.add(inner.getValue()[5]);
+            }
+        }
+        Collections.sort(shots, Collections.reverseOrder());
+        List<String> top5shots = shots.subList(0, 5);
+        return top5shots;
+    }
+
+    /**
+     * This function loops through all the games and returns the top 5 games that has most team goals
+     *
+     * @return Returns the top 5 team goals in a list of string
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
+    public static List<String> topTeamGoals() {
+        ArrayList<String> goals = new ArrayList<String>();
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                goals.add(inner.getValue()[6]);
+                goals.add(inner.getValue()[7]);
+            }
+        }
+        Collections.sort(goals, Collections.reverseOrder());
+        List<String> top5goals = goals.subList(0, 5);
+        return top5goals;
+    }
+
+    /**
+     * This function returns the tally of the games that ended up as a tie game
+     *
+     * @return Returns the tally of the games that is a tie game
+     * @author Adrian Ponce, Feb 24, 2022, T03
+     */
+    public static int gamesWithATie() {
+        ArrayList<String> games = new ArrayList<String>();
+        int tieGame = 0;
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                games.add(inner.getValue()[8]);
+            }
+        }
+        for (int i = 0; i < games.size(); i++) {
+            if (Objects.equals(games.get(i), "Tie")) {
+                tieGame++;
+            }
+        }
+        return tieGame;
     }
 
     /**
