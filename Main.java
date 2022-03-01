@@ -619,6 +619,44 @@ public class Main {
         return games;
     }
 
+    public static int topTeamFouls() {
+        ArrayList<String[]> fouls = new ArrayList<String[]>();
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                fouls.add(inner.getValue());
+            }
+        }
+        int totalFouls;
+
+    }
+
+    public static String topTeamShots() {
+        ArrayList<String[]> shots = new ArrayList<String[]>();
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                shots.add(inner.getValue());
+            }
+        }
+    }
+
+    public static String topTeamGoals() {
+        String[] goals;
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                goals = inner.getValue();
+            }
+        }
+    }
+
+    public static String topTeamWins() {
+        String[] wins;
+        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                wins = inner.getValue();
+            }
+        }
+    }
+
     /**
      * This function loops through all the games and returns the top 5 games that has most team fouls
      *
