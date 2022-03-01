@@ -184,6 +184,7 @@ public class Main {
                 break;
             case 5:
                 TestData();
+                mainMenu();
                 break;
             case 6:
                 System.exit(0);
@@ -524,7 +525,7 @@ public class Main {
         String[] game3 = {"Manchester", "Glasborough", "24", "35", "13", "20", "5", "5", "Tie", "2020-1-3"};
         String[] game4 = {"Manchester", "Glasborough", "25", "36", "14", "21", "8", "6", "Home", "2021-1-1"};
         String[] game5 = {"Manchester", "Glasborough", "26", "37", "15", "22", "9", "7", "Away", "2021-1-2"};
-        String[] game6 = {"Manchester", "Glasborough", "27", "38", "16", "23", "10", "10", "Tie", "2021-1-3"};
+        String[] game6 = {"Manchester", "Glasborough", "27", "38", "16", "23", "9", "8", "Tie", "2021-1-3"};
         String[] game7 = {"Manchester", "Glasborough", "28", "39", "17", "24", "5", "7", "Home", "2022-1-1"};
         String[] game8 = {"Manchester", "Glasborough", "29", "40", "18", "25", "7", "5", "Away", "2022-1-2"};
         String[] game9 = {"Manchester", "Glasborough", "21", "41", "19", "26", "5", "5", "Tie", "2022-1-3"};
@@ -538,7 +539,6 @@ public class Main {
         addGame(2022, game8);
         addGame(2022, game9);
         System.out.println("Test Data Activated!");
-        mainMenu();
     }
     /**
      * This function returns the total shots of each team in a particular game
