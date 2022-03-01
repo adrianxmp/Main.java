@@ -454,7 +454,7 @@ public class Main {
                     }
                 }
                 int gameYear = choice;
-                if (Year.containsKey(Integer.toString(choice)) == true){
+                if (Year.containsKey(Integer.toString(choice)) == true) {
                     System.out.println("All games for " + gameYear + " are " + allGameYears(Integer.toString(gameYear)));
                 }
                 generalMenu();
@@ -512,11 +512,14 @@ public class Main {
                 break;
         }
     }
+
     /**
      * Creates a bunch of test data within the program, for demo purposes
+     *
      * @author Robert Engel, T03, Feb 28 2022
-     * */
-    public static void TestData(){
+     */
+    public static void TestData() {
+        // Adding games to the database to use as testing data's
         addYear(2020);
         addYear(2021);
         addYear(2022);
@@ -540,6 +543,7 @@ public class Main {
         addGame(2022, game9);
         System.out.println("Test Data Activated!");
     }
+
     /**
      * This function returns the total shots of each team in a particular game
      *
@@ -551,14 +555,16 @@ public class Main {
     public static int totalShots(int gameYear, String gameChecker) {
         String[] homeShots;
         String[] awayShots;
+        // Using the getGameData function to get the shots data
         homeShots = getGameData(gameYear, gameChecker);
         awayShots = getGameData(gameYear, gameChecker);
+        // Using conditional to make sure home and away shots are not equals to null
         if (homeShots != null && awayShots != null) {
+            // Assigning the index of shots and adding it to a variable, then returning it
             int shotsTotal = Integer.parseInt(homeShots[4]) + Integer.parseInt(awayShots[5]);
             return shotsTotal;
-        }
-        else{
-            System.out.println("Error Occured! Game Not Found!");
+        } else {
+            System.out.println("Error Occurred! Game Not Found!");
             return 0;
         }
     }
@@ -572,14 +578,16 @@ public class Main {
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
     public static int totalFouls(int gameYear, String gameChecker) {
+        // Using the getGameData function to get the foul data
         String[] homeFouls = getGameData(gameYear, gameChecker);
         String[] awayFouls = getGameData(gameYear, gameChecker);
+        // Using conditional to make sure home and away fouls are not equals to null
         if (homeFouls != null && awayFouls != null) {
+            // Assigning the index of fouls and adding it to a variable, then returning it
             int foulsTotal = Integer.parseInt(homeFouls[2]) + Integer.parseInt(homeFouls[3]);
             return foulsTotal;
-        }
-        else{
-            System.out.println("Error Occured! Game Not Found!");
+        } else {
+            System.out.println("Error Occurred! Game Not Found!");
             return 0;
         }
     }
@@ -591,6 +599,7 @@ public class Main {
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
     public static Set<String> allYears() {
+        // Returns all the year in the database
         return Year.keySet();
     }
 
@@ -602,6 +611,7 @@ public class Main {
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
     public static Set<String> allGameYears(String gameYear) {
+        // Returns every game in a year
         return Year.get(gameYear).keySet();
     }
 
@@ -613,48 +623,11 @@ public class Main {
      */
     public static List<String> allGamesEverPlayed() {
         ArrayList<String> games = new ArrayList<String>();
+        // Looping through the hashmap to return every game ever played and adding it to an arraylist and returning it
         for (Map.Entry<String, HashMap<String, String[]>> entry : Year.entrySet()) {
             games.add(String.valueOf(entry.getValue().keySet()));
         }
         return games;
-    }
-
-    public static int topTeamFouls() {
-        ArrayList<String[]> fouls = new ArrayList<String[]>();
-        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
-            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
-                fouls.add(inner.getValue());
-            }
-        }
-        int totalFouls;
-
-    }
-
-    public static String topTeamShots() {
-        ArrayList<String[]> shots = new ArrayList<String[]>();
-        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
-            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
-                shots.add(inner.getValue());
-            }
-        }
-    }
-
-    public static String topTeamGoals() {
-        String[] goals;
-        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
-            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
-                goals = inner.getValue();
-            }
-        }
-    }
-
-    public static String topTeamWins() {
-        String[] wins;
-        for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
-            for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
-                wins = inner.getValue();
-            }
-        }
     }
 
     /**
@@ -665,13 +638,18 @@ public class Main {
      */
     public static List<String> topTeamFouls() {
         ArrayList<String> fouls = new ArrayList<String>();
+        // Looping through the outer hashmap
         for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            // Looping through the inner hashmap to access its value
             for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                // Adding the value of fouls from the inner Hashmap to an arraylist
                 fouls.add(inner.getValue()[2]);
                 fouls.add(inner.getValue()[3]);
             }
         }
+        // Sorting the values
         Collections.sort(fouls, Collections.reverseOrder());
+        // Slicing the top 5 value of fouls from a descending order and returning it
         List<String> top5fouls = fouls.subList(0, 5);
         return top5fouls;
     }
@@ -684,13 +662,18 @@ public class Main {
      */
     public static List<String> topTeamShots() {
         ArrayList<String> shots = new ArrayList<String>();
+        // Looping through the outer hashmap
         for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            // Looping through the inner hashmap to access its value
             for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                // Adding the value of shots from the inner Hashmap to an arraylist
                 shots.add(inner.getValue()[4]);
                 shots.add(inner.getValue()[5]);
             }
         }
+        // Sorting the values
         Collections.sort(shots, Collections.reverseOrder());
+        // Slicing the top 5 value of shots from a descending order and returning it
         List<String> top5shots = shots.subList(0, 5);
         return top5shots;
     }
@@ -703,13 +686,18 @@ public class Main {
      */
     public static List<String> topTeamGoals() {
         ArrayList<String> goals = new ArrayList<String>();
+        // Looping through the outer hashmap
         for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            // Looping through the inner hashmap to access the goals value
             for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                // Adding the value of goals from the inner Hashmap to an arraylist
                 goals.add(inner.getValue()[6]);
                 goals.add(inner.getValue()[7]);
             }
         }
+        // Sorting the goals values
         Collections.sort(goals, Collections.reverseOrder());
+        // Slicing the top 5 value of goals from a descending order and returning it
         List<String> top5goals = goals.subList(0, 5);
         return top5goals;
     }
@@ -722,13 +710,19 @@ public class Main {
      */
     public static int gamesWithATie() {
         ArrayList<String> games = new ArrayList<String>();
+        // Declaring an integer variable to keep track of the tie game
         int tieGame = 0;
+        // Looping through the outer Hashmap
         for (Map.Entry<String, HashMap<String, String[]>> outer : Year.entrySet()) {
+            // Looping through the inner Hashmap to access the winner value
             for (Map.Entry<String, String[]> inner : outer.getValue().entrySet()) {
+                // Adding it to an arraylist
                 games.add(inner.getValue()[8]);
             }
         }
+        // Looping through the arraylist of winners data
         for (int i = 0; i < games.size(); i++) {
+            // Conditional to check if there's a tie game and adding 1 to tally if there is and returning it
             if (Objects.equals(games.get(i), "Tie")) {
                 tieGame++;
             }
