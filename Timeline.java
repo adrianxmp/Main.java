@@ -13,6 +13,9 @@ public class Timeline {
         if(timeline.contains(newYear)){
             System.out.println("Year already Exists! Year not added");
         }
+        else if(newYear.yearNumber == 0){
+            System.out.println("Error, Year not created correctly!");
+        }
         else{
             timeline.add(newYear);
         }
