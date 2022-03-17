@@ -1,3 +1,5 @@
+package project;
+
 import java.util.*;
 
 public class Main {
@@ -12,7 +14,7 @@ public class Main {
      */
     public static void addYear(int newYear) {
         if (Year.containsKey(Integer.toString(newYear)) == true) {
-            System.out.println("Year already Exists! Year Not Added");
+            System.out.println("project.data.Year already Exists! project.data.Year Not Added");
         } else {
             HashMap<String, String[]> addYear = new HashMap<String, String[]>();
             Year.put(Integer.toString(newYear), addYear);
@@ -21,7 +23,7 @@ public class Main {
 
     /**
      * @param checkYear the year being added to, the function will do nothing if the given year is not a key
-     *                  within the Year HashMap
+     *                  within the project.data.Year HashMap
      * @param gameData  the Data being added to the game, should be a String[] of length 10, with special values
      *                  for each String, showing, in order
      *                  Home Team
@@ -35,7 +37,7 @@ public class Main {
      *                  Winner
      *                  Date
      * @author Robert Engel, T03, Feb 21 2022
-     * This function adds a new game to a specific Year HashMap, along with the data for the game
+     * This function adds a new game to a specific project.data.Year HashMap, along with the data for the game
      */
     public static void addGame(int checkYear, String[] gameData) {
         if (Year.containsKey(Integer.toString(checkYear)) == true) {
@@ -43,7 +45,7 @@ public class Main {
             Year.get(Integer.toString(checkYear)).put(gameKey, gameData);
 
         } else {
-            System.out.println("Specified Year does not Exist!");
+            System.out.println("Specified project.data.Year does not Exist!");
         }
 
     }
@@ -51,7 +53,7 @@ public class Main {
     /**
      * @param checkYear the year within the game which is being retrieved, should be a 4-digit positive int
      * @param checkGame the game name which is being retrieved, should be along the lines of "Home vs. Away on Date"
-     * @return A String of Game Data, see addGame for the specifics
+     * @return A String of project.data.Game Data, see addGame for the specifics
      * @author Robert Engel, T03, Feb 21 2022
      * This function returns the data of a specific game as a String, for easier access
      */
@@ -154,8 +156,8 @@ public class Main {
      */
     public static void mainMenu() {
         int choice = 0;
-        System.out.println("Welcome to the Premier League Database Main Menu!\nPlease Input a number to choose your action");
-        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Create Test Data\n6. Quit the program");
+        System.out.println("Welcome to the Premier League Database project.Main Menu!\nPlease Input a number to choose your action");
+        System.out.println("1. Add a new project.data.Year\n2. Add a new project.data.Game to a project.data.Year\n3. General Output Menu\n4. Special Output Menu\n5. Create Test Data\n6. Quit the program");
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
@@ -201,7 +203,7 @@ public class Main {
         int choice = 0;
         while (choice == 0) {
             try {
-                System.out.print("Please Input the Year:");
+                System.out.print("Please Input the project.data.Year:");
                 choice = input.nextInt();
                 if (choice < 1000 || choice > 9999) {
                     choice = 0;
@@ -407,7 +409,7 @@ public class Main {
      */
     public static void generalMenu() {
         System.out.println("Please Input a Number to choose your action");
-        System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the Main Menu");
+        System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the project.Main Menu");
         int choice = 0;
         String[] GameFound;
         while (choice == 0) {
@@ -475,7 +477,7 @@ public class Main {
      */
     public static void specialMenu() {
         System.out.println("Please Input a Number to choose your action");
-        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for shots\n3.Print the top 5 games for goals\n4.Print how many games ended in a tie\n5.Return to the Main Menu");
+        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for shots\n3.Print the top 5 games for goals\n4.Print how many games ended in a tie\n5.Return to the project.Main Menu");
         int choice = 0;
         while (choice == 0) {
             try {
@@ -547,8 +549,8 @@ public class Main {
     /**
      * This function returns the total shots of each team in a particular game
      *
-     * @param gameYear    Year of the game that the user wants to see the total shots
-     * @param gameChecker Game name that the user want to see the total shots. eg "Home vs Away on Date"
+     * @param gameYear    project.data.Year of the game that the user wants to see the total shots
+     * @param gameChecker project.data.Game name that the user want to see the total shots. eg "Home vs Away on Date"
      * @return Returns an integer of total shots of each team in a game
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
@@ -564,7 +566,7 @@ public class Main {
             int shotsTotal = Integer.parseInt(homeShots[4]) + Integer.parseInt(awayShots[5]);
             return shotsTotal;
         } else {
-            System.out.println("Error Occurred! Game Not Found!");
+            System.out.println("Error Occurred! project.data.Game Not Found!");
             return 0;
         }
     }
@@ -572,8 +574,8 @@ public class Main {
     /**
      * This function returns the total fouls of each team in a particular game
      *
-     * @param gameYear    Year of the game that the user wants to see the total fouls
-     * @param gameChecker Game name that the user want to see the total fouls
+     * @param gameYear    project.data.Year of the game that the user wants to see the total fouls
+     * @param gameChecker project.data.Game name that the user want to see the total fouls
      * @return Returns an integer of the total fouls of each team in game
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
@@ -587,7 +589,7 @@ public class Main {
             int foulsTotal = Integer.parseInt(homeFouls[2]) + Integer.parseInt(homeFouls[3]);
             return foulsTotal;
         } else {
-            System.out.println("Error Occurred! Game Not Found!");
+            System.out.println("Error Occurred! project.data.Game Not Found!");
             return 0;
         }
     }
@@ -606,7 +608,7 @@ public class Main {
     /**
      * This function displays every game in a year
      *
-     * @param gameYear Year that the user is looking for
+     * @param gameYear project.data.Year that the user is looking for
      * @return Returns every game in a year
      * @author Adrian Ponce, Feb 24, 2022, T03
      */
