@@ -49,4 +49,14 @@ public class Timeline {
             }
         }
     }
+    public Year getYear(int yearNumber){
+        Year checkYear = new Year(yearNumber);
+        if(timeline.contains(checkYear)){
+            return checkYear;
+        }
+        else{
+            System.out.println("Error! Year not found!");
+            return null;
+        }
+    }
 }
