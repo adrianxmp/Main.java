@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Year extends Timeline{
     int yearNumber;
+
+    public ArrayList<Game> getGameList() {
+        return gameList;
+    }
+
     private final ArrayList<Game> gameList = new ArrayList<Game>();
     /**
      * @author Robert Engel, T03, March 17 2022
