@@ -22,13 +22,9 @@ public class Year extends Timeline{
     public int getYearNumber() {
         return yearNumber;
     }
-    /**
-     * @author Robert Engel, T03, March 17 2022
-     * adds a project.data.Game to the project.data.Year if it doesn't already exist
-     */
     public void addGame(Game newGame){
         if(gameList.contains(newGame) == true){
-            System.out.println("Error! project.data.Game already exists!");
+            System.out.println("Game already exists! Game not added");
         }
         else{
             gameList.add(newGame);

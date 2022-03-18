@@ -20,7 +20,8 @@ public class Timeline {
      * @author Robert Engel, T03, March 17 2022
      * adds a project.data.Year to the timeline array if it doesn't already exist
      */
-    public void addYear(Year newYear){
+    public static void addYear(int yearNumber){
+        Year newYear = new Year(yearNumber);
         if(timeline.contains(newYear)){
             System.out.println("project.data.Year already Exists! project.data.Year not added");
         }
@@ -29,6 +30,23 @@ public class Timeline {
         }
         else{
             timeline.add(newYear);
+        }
+    }
+    public static ArrayList<Year> getTimeline(){
+        return timeline;
+    }
+    /**
+     * @author Robert Engel, T03, March 17 2022
+     * adds a project.data.Game to the project.data.Year if it doesn't already exist
+     */
+    public static void addGameToYear(Game newGame, int year){
+        for(int i = 0; i < timeline.size(); i++){
+            if(timeline.get(i).yearNumber == year){
+                timeline.get(i).addGame(newGame);
+            }
+            else{
+                System.out.println("Error, game not found!");
+            }
         }
     }
 }
