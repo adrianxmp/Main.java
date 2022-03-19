@@ -1,10 +1,10 @@
 package project.menu;
 
-import project.data.Game;
 import project.data.Timeline;
-import project.data.Year;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class Output extends Menu{
@@ -25,4 +25,19 @@ public class Output extends Menu{
         int totalFouls = homeFouls + awayFouls;
         return totalFouls;
     }
+    public static List<String> topFouls() {
+        ArrayList<String> timelineList = new ArrayList<>();
+        ArrayList<String> fouls = new ArrayList<>();
+        timelineList.add(String.valueOf(Timeline.getTimeline()));
+        for (int i = 0; i < timelineList.size(); i++) {
+            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
+                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeFouls()));
+                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayFouls()));
+            }
+        }
+        Collections.sort(fouls, Collections.reverseOrder());
+        List<String> topFiveFouls = fouls.subList(0, 5);
+        return topFiveFouls;
+    }
+
 }
