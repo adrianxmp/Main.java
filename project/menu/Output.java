@@ -55,4 +55,18 @@ public class Output extends Menu{
         return topFiveShots;
     }
 
+    public static List<String> topGoals(){
+        ArrayList<String> timelineList = new ArrayList<>();
+        ArrayList<String> goals = new ArrayList<>();
+        for (int i = 0; i < timelineList.size(); i++) {
+            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
+                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeGoals()));
+                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayGoals()));
+            }
+        }
+        Collections.sort(goals, Collections.reverseOrder());
+        List<String> topFiveGoals = goals.subList(0, 5);
+        return topFiveGoals;
+    }
+
 }
