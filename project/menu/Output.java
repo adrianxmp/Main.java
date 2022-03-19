@@ -25,6 +25,7 @@ public class Output extends Menu{
         int totalFouls = homeFouls + awayFouls;
         return totalFouls;
     }
+
     public static List<String> topFouls() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> fouls = new ArrayList<>();
@@ -38,6 +39,20 @@ public class Output extends Menu{
         Collections.sort(fouls, Collections.reverseOrder());
         List<String> topFiveFouls = fouls.subList(0, 5);
         return topFiveFouls;
+    }
+
+    public static List<String> topShots() {
+        ArrayList<String> timelineList = new ArrayList<>();
+        ArrayList<String> shots = new ArrayList<>();
+        for (int i = 0; i < timelineList.size(); i++) {
+            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
+                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeShots()));
+                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayShots()));
+            }
+        }
+        Collections.sort(shots, Collections.reverseOrder());
+        List<String> topFiveShots = shots.subList(0, 5);
+        return topFiveShots;
     }
 
 }
