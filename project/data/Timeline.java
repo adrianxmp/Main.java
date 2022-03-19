@@ -42,6 +42,17 @@ public class Timeline {
         return yearList;
     }
 
+    public ArrayList<String> getAllGamesEverPlayed() {
+        ArrayList<String> games = new ArrayList<>();
+        ArrayList<String> allGames = new ArrayList<>();
+        games.add(String.valueOf(Timeline.getTimeline()));
+        for (int i = 0; i < games.size(); i++) {
+            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
+                allGames.add(String.valueOf(Timeline.getYear(i).getGameList().get(j)));
+            }
+        }
+        return allGames;
+    }
 
     /**
      * @author Robert Engel, T03, March 17 2022
