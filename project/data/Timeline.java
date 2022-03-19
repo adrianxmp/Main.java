@@ -35,10 +35,19 @@ public class Timeline {
     public static ArrayList<Year> getTimeline(){
         return timeline;
     }
+
+    public ArrayList<ArrayList<Game>> getAllGameInAYear(int yearNumber){
+        ArrayList<ArrayList<Game>> yearList = new ArrayList<>();
+        yearList.add(Timeline.getYear(yearNumber).getGameList());
+        return yearList;
+    }
+
+
     /**
      * @author Robert Engel, T03, March 17 2022
      * adds a project.data.Game to the project.data.Year if it doesn't already exist
      */
+
     public static void addGameToYear(Game newGame, int year){
         for(int i = 0; i < timeline.size(); i++){
             if(timeline.get(i).yearNumber == year){
