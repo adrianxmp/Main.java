@@ -21,6 +21,10 @@ public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, 
         HOME, AWAY, TIE
     }
 
+    public Winner getGameWinner() {
+        return gameWinner;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Game) {
