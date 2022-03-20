@@ -27,7 +27,7 @@ public class Output extends Menu{
         return totalFouls;
     }
 
-    public static List<String> topFouls() {
+    public static List<String> getTopFouls() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> fouls = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
@@ -42,7 +42,7 @@ public class Output extends Menu{
         return topFiveFouls;
     }
 
-    public static List<String> topShots() {
+    public static List<String> getTopShots() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> shots = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
@@ -57,7 +57,7 @@ public class Output extends Menu{
         return topFiveShots;
     }
 
-    public static List<String> topGoals(){
+    public static List<String> getTopGoals(){
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> goals = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
