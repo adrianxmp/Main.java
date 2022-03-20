@@ -8,9 +8,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class Output extends Menu{
-
-    public static int getShots(int gameYear, String gameID){
+public class Output extends Menu {
+    /**
+     * @param gameYear Year of the game
+     * @param gameID   Game ID of the game
+     * @return Returns the total shots in the game
+     * @author Adrian Ponce, T03, March 20,2022
+     * This method gets all shots in the game
+     */
+    public static int getShots(int gameYear, String gameID) {
         int homeShots;
         int awayShots;
         homeShots = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeShots();
@@ -18,7 +24,15 @@ public class Output extends Menu{
         int totalShots = homeShots + awayShots;
         return totalShots;
     }
-    public static int getFouls(int gameYear, String gameID){
+
+    /**
+     * @param gameYear Year of the game
+     * @param gameID   Game ID of the game
+     * @return Returns the total fouls of the game
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets the total fouls of the game
+     */
+    public static int getFouls(int gameYear, String gameID) {
         int homeFouls;
         int awayFouls;
         homeFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeFouls();
@@ -27,6 +41,11 @@ public class Output extends Menu{
         return totalFouls;
     }
 
+    /**
+     * @return Returns a list of top five fouls
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets the Top Five Fouls in all the games played
+     */
     public static List<String> getTopFouls() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> fouls = new ArrayList<>();
@@ -42,6 +61,11 @@ public class Output extends Menu{
         return topFiveFouls;
     }
 
+    /**
+     * @return Returns a list of top five shots
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets the Top five shots in all the games played
+     */
     public static List<String> getTopShots() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> shots = new ArrayList<>();
@@ -57,7 +81,12 @@ public class Output extends Menu{
         return topFiveShots;
     }
 
-    public static List<String> getTopGoals(){
+    /**
+     * @return Returns a list of top five goals
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets the Top Five Goals in all the games played
+     */
+    public static List<String> getTopGoals() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> goals = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
@@ -71,7 +100,13 @@ public class Output extends Menu{
         List<String> topFiveGoals = goals.subList(0, 5);
         return topFiveGoals;
     }
-    public static int getGamesWithATie(){
+
+    /**
+     * @return Returns the counts of the games that ended in a tie
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets all the games that ended in tie
+     */
+    public static int getGamesWithATie() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> gameOutcome = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));

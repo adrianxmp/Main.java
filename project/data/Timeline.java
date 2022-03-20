@@ -36,12 +36,24 @@ public class Timeline {
         return timeline;
     }
 
+    /**
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets all the games in a given year
+     * @param yearNumber Year number that the user provided
+     * @return Returns a list of all the games within the year provided
+     */
+
     public ArrayList<ArrayList<Game>> getAllGameInAYear(int yearNumber){
         ArrayList<ArrayList<Game>> yearList = new ArrayList<>();
         yearList.add(Timeline.getYear(yearNumber).getGameList());
         return yearList;
     }
 
+    /**
+     * @author Adrian Ponce, T03, March 20,2022
+     * Gets all the games ever played
+     * @return Returns a list of all the games ever played
+     */
     public ArrayList<String> getAllGamesEverPlayed() {
         ArrayList<String> games = new ArrayList<>();
         ArrayList<String> allGames = new ArrayList<>();
