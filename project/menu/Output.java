@@ -46,7 +46,7 @@ public class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top Five Fouls in all the games played
      */
-    public static List<String> getTopFouls() {
+    public static List<String> getTopFiveFouls() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> fouls = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
@@ -66,7 +66,7 @@ public class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top five shots in all the games played
      */
-    public static List<String> getTopShots() {
+    public static List<String> getTopFiveShots() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> shots = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
@@ -86,7 +86,7 @@ public class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top Five Goals in all the games played
      */
-    public static List<String> getTopGoals() {
+    public static List<String> getTopFiveGoals() {
         ArrayList<String> timelineList = new ArrayList<>();
         ArrayList<String> goals = new ArrayList<>();
         timelineList.add(String.valueOf(Timeline.getTimeline()));
