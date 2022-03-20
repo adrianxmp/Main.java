@@ -25,4 +25,8 @@ public class Output extends Menu{
         int totalFouls = homeFouls + awayFouls;
         return totalFouls;
     }
+    public void test(){
+        ArrayList<Year> testy = Timeline.getTimeline();
+
+    }
 }
