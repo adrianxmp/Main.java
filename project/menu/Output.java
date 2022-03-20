@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class Output extends Menu {
+public abstract class Output extends Menu {
     /**
      * @param gameYear Year of the game
      * @param gameID   Game ID of the game

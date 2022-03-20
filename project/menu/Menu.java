@@ -286,14 +286,6 @@ public abstract class Menu {
             }
         }
         int awayGoals = choice;
-        Game.Winner winner;
-        if (homeGoals > awayGoals) {
-            winner = Game.Winner.HOME;
-        } else if (awayGoals > homeGoals) {
-            winner = Game.Winner.AWAY;
-        } else {
-            winner = Game.Winner.TIE;
-        }
         choice = 0;
         while (choice == 0) {
             try {
@@ -340,7 +332,8 @@ public abstract class Menu {
         }
         int gameDay = choice;
         String Date = gameYear + "-" + gameMonth + "-" + gameDay;
-        Game newGame = new Game(home, away, homeFouls, awayFouls, homeShots, awayShots, homeGoals, awayGoals, winner, Date);
+        Game newGame = new Game(home, away, homeFouls, awayFouls, homeShots, awayShots, homeGoals, awayGoals, Date);
+        Timeline.addGameToYear(newGame, gameYear);
         mainMenu();
     }
     /**
@@ -461,4 +454,24 @@ public abstract class Menu {
      *
      * @author Robert Engel, T03, Feb 28 2022
      */
+    public void testData(){
+        Timeline.addYear(2020);
+        Timeline.addYear(2021);
+        Timeline.addYear(2022);
+        Game game1 = new Game("Manchester United", "Glasborough", 1, 2, 3, 4, 3, 3,"2020-1-1");
+        Game game2 = new Game("Manchester United", "Glasborough", 5, 6, 7, 8, 4, 5,"2020-1-2");
+        Game game3 = new Game("Manchester United", "Glasborough", 9, 10, 11, 12, 7, 6,"2021-1-1");
+        Game game4 = new Game("Manchester United", "Glasborough", 13, 14, 15, 16, 8, 8,"2021-1-2");
+        Game game5 = new Game("Manchester United", "Glasborough", 17, 18, 19, 20, 9, 10,"2022-1-1");
+        Game game6 = new Game("Manchester United", "Glasborough", 21, 22, 23, 24, 12, 11,"2022-1-2");
+        Timeline.addGameToYear(game1, 2020);
+        Timeline.addGameToYear(game2, 2020);
+        Timeline.addGameToYear(game3, 2021);
+        Timeline.addGameToYear(game4, 2021);
+        Timeline.addGameToYear(game5, 2022);
+        Timeline.addGameToYear(game6, 2022);
+        System.out.println("Test Data Activated!");
+
+
+    }
 }

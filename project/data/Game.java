@@ -5,7 +5,7 @@ public class Game extends Year {
     private int homeFouls, homeShots, homeGoals, awayFouls, awayShots, awayGoals;
     private final String id = home + " vs. " + away + " on " + date;
     Winner gameWinner;
-public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, int newHomeShots,int newAwayShots,int newHomeGoals,int newAwayGoals, Winner winner, String date){
+public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, int newHomeShots,int newAwayShots,int newHomeGoals,int newAwayGoals, String date){
     this.home = newhome;
     this.away = newaway;
     this.homeFouls = newHomeFouls;
@@ -14,8 +14,16 @@ public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, 
     this.awayFouls = newAwayFouls;
     this.awayShots = newAwayShots;
     this.awayGoals = newAwayGoals;
-    this.gameWinner = winner;
     this.date = date;
+    if(newHomeGoals > newAwayGoals){
+        this.gameWinner = Winner.HOME;
+    }
+    else if (newHomeGoals < newAwayGoals){
+        this.gameWinner = Winner.AWAY;
+    }
+    else{
+        this.gameWinner = Winner.TIE;
+    }
 }
     public enum Winner{
         HOME, AWAY, TIE
