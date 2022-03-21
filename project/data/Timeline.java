@@ -55,12 +55,11 @@ public class Timeline {
      * @return Returns a list of all the games ever played
      */
     public static ArrayList<String> getAllGamesEverPlayed() {
-        ArrayList<String> games = new ArrayList<>();
-        ArrayList<String> allGames = new ArrayList<>();
-        games.add(String.valueOf(Timeline.getTimeline()));
+        ArrayList<Year> games = Timeline.getTimeline();
+        ArrayList<String> allGames = new ArrayList<String>();
         for (int i = 0; i < games.size(); i++) {
-            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
-                allGames.add(String.valueOf(Timeline.getYear(i).getGameList().get(j)));
+            for (int j = 0; j < games.get(i).getGameList().size(); j++) {
+                allGames.add(String.valueOf(games.get(i).getGameList().get(j).getId()));
             }
         }
         return allGames;
