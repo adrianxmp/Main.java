@@ -72,13 +72,15 @@ public class Timeline {
      */
 
     public static void addGameToYear(Game newGame, int year){
+        boolean hasAddedGame = false;
         for(int i = 0; i < timeline.size(); i++){
             if(timeline.get(i).yearNumber == year){
                 timeline.get(i).addGame(newGame);
+                hasAddedGame = true;
             }
-            else{
-                System.out.println("Error, game not found!");
-            }
+        }
+        if(hasAddedGame == false){
+            System.out.println("Error, game not added!");
         }
     }
     public static Year getYear(int yearNumber){

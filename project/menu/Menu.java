@@ -131,6 +131,8 @@ public abstract class Menu {
                 break;
             case 5:
                 testData();
+                mainMenu();
+                break;
             case 6:
                 input.close();
                 System.exit(0);
