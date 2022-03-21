@@ -173,7 +173,7 @@ public abstract class Menu {
     public static void gameMenu() {
         int choice = 0;
         String sChoice = "";
-        System.out.println("Teams have their first letter capitalized, no periods for abbreviations");
+        System.out.println("\nTeams have their first letter capitalized, no periods for abbreviations");
         while (sChoice.isEmpty() == true) {
             try {
                 System.out.print("Please Input the Home Team:");
@@ -347,7 +347,7 @@ public abstract class Menu {
      * the part of the menu where you ask for general types of input
      */
     public static void generalMenu() {
-        System.out.println("Please Input a Number to choose your action");
+        System.out.println("\nPlease Input a Number to choose your action");
         System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the Main Menu");
         int choice = 0;
         String[] GameFound;
@@ -434,19 +434,19 @@ public abstract class Menu {
         }
         switch (choice) {
             case 1:
-                System.out.println("The top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
+                System.out.println("\nThe top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
                 specialMenu();
                 break;
             case 2:
-                System.out.println("The top 5 amount of shots in a game are " + Output.getTopFiveShots());
+                System.out.println("\nThe top 5 amount of shots in a game are " + Output.getTopFiveShots());
                 specialMenu();
                 break;
             case 3:
-                System.out.println("The top 5 amount of goals in a game are " + Output.getTopFiveGoals());
+                System.out.println("\nThe top 5 amount of goals in a game are " + Output.getTopFiveGoals());
                 specialMenu();
                 break;
             case 4:
-                System.out.println(Output.getGamesWithATie() + " Games ended in a tie");
+                System.out.println("\n" + Output.getGamesWithATie() + " Games ended in a tie");
                 specialMenu();
                 break;
             case 5:
@@ -516,7 +516,7 @@ public abstract class Menu {
         Timeline.addGameToYear(game4, 2021);
         Timeline.addGameToYear(game5, 2022);
         Timeline.addGameToYear(game6, 2022);
-        System.out.println("Test Data Activated!");
+        System.out.println("\nTest Data Activated!");
 
 
     }
