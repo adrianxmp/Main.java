@@ -43,10 +43,13 @@ public class Timeline {
      * @return Returns a list of all the games within the year provided
      */
 
-    public static ArrayList<ArrayList<Game>> getAllGameInAYear(int yearNumber){
-        ArrayList<ArrayList<Game>> yearList = new ArrayList<>();
-        yearList.add(Timeline.getYear(yearNumber).getGameList());
-        return yearList;
+    public static ArrayList<String> getAllGameInAYear(int yearNumber){
+        Year year = Timeline.getYear(yearNumber);
+        ArrayList<String> games = new ArrayList<String>();
+        for(int i = 0; i < year.getGameList().size(); i++){
+            games.add(year.getGameList().get(i).getId());
+        }
+        return games;
     }
 
     /**
@@ -85,7 +88,7 @@ public class Timeline {
     public static Year getYear(int yearNumber){
         Year checkYear = new Year(yearNumber);
         if(timeline.contains(checkYear)){
-            return checkYear;
+            return timeline.get(timeline.indexOf(checkYear));
         }
         else{
             System.out.println("Error! Year not found!");
