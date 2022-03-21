@@ -15,10 +15,11 @@ public abstract class Menu {
         int choice = 0;
         String sChoice = "";
         System.out.println("Teams have their first letter capitalized, no periods for abbreviations");
+        input.nextLine();
         while (sChoice.isEmpty() == true) {
             try {
                 System.out.print("Please Input the Home Team:");
-                sChoice = input.next();
+                sChoice = input.nextLine();
                 if (sChoice.isEmpty() == true) {
                     System.out.println("Invalid Input, Please Try again!");
                 }
@@ -29,11 +30,10 @@ public abstract class Menu {
         }
         String homeTeam = sChoice;
         sChoice = "";
-        input.nextLine();
         while (sChoice.isEmpty() == true) {
             try {
                 System.out.print("Please Input the Away Team:");
-                sChoice = input.next();
+                sChoice = input.nextLine();
                 if (sChoice.isEmpty() == true) {
                     System.out.println("Invalid Input, Please Try again!");
                 }

@@ -1,12 +1,7 @@
 package project.menu;
 
-import project.data.Game;
-import project.data.Timeline;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import project.data.*;
+import java.util.*;
 
 public abstract class Output extends Menu {
     /**
@@ -17,10 +12,16 @@ public abstract class Output extends Menu {
      * This method gets all shots in the game
      */
     public static int getShots(int gameYear, String gameID) {
-        int homeShots;
-        int awayShots;
-        homeShots = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeShots();
-        awayShots = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayShots();
+        int homeShots = 0;
+        int awayShots = 0;
+        try{
+            homeShots = Timeline.getYear(gameYear).getGame(gameID).getHomeShots();
+            awayShots = Timeline.getYear(gameYear).getGame(gameID).getAwayShots();
+        }
+        catch(NullPointerException e){
+            System.out.println("Error, Game does not seem to exist!");
+        }
+
         int totalShots = homeShots + awayShots;
         return totalShots;
     }
@@ -33,10 +34,16 @@ public abstract class Output extends Menu {
      * Gets the total fouls of the game
      */
     public static int getFouls(int gameYear, String gameID) {
-        int homeFouls;
-        int awayFouls;
-        homeFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeFouls();
-        awayFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayFouls();
+        int homeFouls = 0;
+        int awayFouls = 0;
+        try{
+            homeFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeFouls();
+            awayFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayFouls();
+        }
+        catch(NullPointerException e){
+            System.out.println("Error! Game does not seem to exist!");
+        }
+
         int totalFouls = homeFouls + awayFouls;
         return totalFouls;
     }
@@ -46,18 +53,17 @@ public abstract class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top Five Fouls in all the games played
      */
-    public static List<String> getTopFiveFouls() {
-        ArrayList<String> timelineList = new ArrayList<>();
-        ArrayList<String> fouls = new ArrayList<>();
-        timelineList.add(String.valueOf(Timeline.getTimeline()));
+    public static List<Integer> getTopFiveFouls() {
+        ArrayList<Year> timelineList = Timeline.getTimeline();
+        ArrayList<Integer> fouls = new ArrayList<Integer>();
         for (int i = 0; i < timelineList.size(); i++) {
-            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
-                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeFouls()));
-                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayFouls()));
+            for (int j = 0; j < timelineList.get(i).getGameList().size(); j++) {
+                fouls.add(timelineList.get(i).getGameList().get(j).getHomeFouls());
+                fouls.add(timelineList.get(i).getGameList().get(j).getAwayFouls());
             }
         }
         Collections.sort(fouls, Collections.reverseOrder());
-        List<String> topFiveFouls = fouls.subList(0, 5);
+        List<Integer> topFiveFouls = fouls.subList(0, 5);
         return topFiveFouls;
     }
 
@@ -107,16 +113,15 @@ public abstract class Output extends Menu {
      * Gets all the games that ended in tie
      */
     public static int getGamesWithATie() {
-        ArrayList<String> timelineList = new ArrayList<>();
-        ArrayList<String> gameOutcome = new ArrayList<>();
-        timelineList.add(String.valueOf(Timeline.getTimeline()));
+        ArrayList<Year> timelineList = Timeline.getTimeline();
+        ArrayList<Game.Winner> gameOutcome = new ArrayList<>();
         int tieGameCounter = 0;
         for (int i = 0; i < timelineList.size(); i++) {
-            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
-                gameOutcome.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getGameWinner()));
+            for (int j = 0; j < timelineList.get(i).getGameList().size(); j++) {
+                gameOutcome.add(timelineList.get(i).getGameList().get(j).getGameWinner());
             }
         }
-        for (String s : gameOutcome) {
+        for (Game.Winner s : gameOutcome) {
             if (Objects.equals(s, Game.Winner.TIE)) {
                 tieGameCounter++;
             }
