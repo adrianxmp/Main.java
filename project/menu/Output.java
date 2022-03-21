@@ -37,8 +37,8 @@ public abstract class Output extends Menu {
         int homeFouls = 0;
         int awayFouls = 0;
         try{
-            homeFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeFouls();
-            awayFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayFouls();
+            homeFouls = Timeline.getYear(gameYear).getGame(gameID).getHomeFouls();
+            awayFouls = Timeline.getYear(gameYear).getGame(gameID).getAwayFouls();
         }
         catch(NullPointerException e){
             System.out.println("Error! Game does not seem to exist!");
