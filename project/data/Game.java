@@ -1,9 +1,8 @@
 package project.data;
 
 public class Game extends Year {
-    private String home, away, date;
+    private String home, away, date, id;
     private int homeFouls, homeShots, homeGoals, awayFouls, awayShots, awayGoals;
-    private final String id = home + " vs. " + away + " on " + date;
     Winner gameWinner;
 public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, int newHomeShots,int newAwayShots,int newHomeGoals,int newAwayGoals, String date){
     this.home = newhome;
@@ -24,6 +23,7 @@ public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, 
     else{
         this.gameWinner = Winner.TIE;
     }
+    this.id = home + " vs. " + away + " on " + date;
 }
     public enum Winner{
         HOME, AWAY, TIE
