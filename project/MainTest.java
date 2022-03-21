@@ -19,7 +19,7 @@ class MainTest {
     @Test
     void totalFoulsTest() {
         Menu.testData();
-        //assertEquals(62, Main.totalFouls(2022, "Manchester vs. Glasborough on 2022-1-3"));
+        assertEquals(62, Output.getFouls(2022, "Manchester United vs. Glasborough on 2022-1-3"));
     }
 
     /**
@@ -49,7 +49,7 @@ class MainTest {
     @Test
     void totalShotsTestOnDifferentGame() {
         Menu.testData();
-        //assertEquals(29, Main.totalShots(2020, "Manchester vs. Glasborough on 2020-1-1"));
+        //assertEquals(29, Output.getShots(2020, "Manchester United vs. Glasborough on 2020-1-1"));
     }
 
     /**
@@ -65,7 +65,7 @@ class MainTest {
         expectedList.add("8");
         expectedList.add("8");
         expectedList.add("7");
-        //assertArrayEquals(expectedList.toArray(), Main.topTeamGoals().toArray());
+        assertArrayEquals(expectedList.toArray(), Output.getTopFiveGoals().toArray());
     }
 
     /**
