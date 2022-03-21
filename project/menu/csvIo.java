@@ -11,8 +11,8 @@ public abstract class csvIo extends Menu{
      */
     static public void loadCsv(String filename){
         File newFile = new File(filename);
+        Scanner input = null;
         if(newFile.isFile() == true){
-            Scanner input = null;
             try {
                 int previousyear = 0;
                 input = new Scanner(newFile).useDelimiter(",|\\n+");

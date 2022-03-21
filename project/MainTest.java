@@ -3,8 +3,8 @@ package project;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-
-import project.data.Timeline;
+import java.io.*;
+import project.data.*;
 import project.menu.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -116,7 +116,7 @@ class MainTest {
     @Test
     void addYearTest() {
         Timeline.addYear(2020);
-        //assertEquals(true, Main.Year.containsKey("2020"));
+        assertEquals(true, Timeline.getYear(2020) != null);
     }
     /**
      * Test if a game is added correctly
@@ -124,17 +124,33 @@ class MainTest {
      * */
     @Test
     void addGameTest() {
-        Menu.testData();
-        String[] game1 = {"Manchester", "Glasborough", "22", "33", "11", "18", "5", "7", "Home", "2020-1-1"};
-        //assertArrayEquals(game1, Main.Year.get("2020").get("Manchester vs. Glasborough on 2020-1-1"));
+        Game testGame = new Game("Manchester United", "Glasborough", 1, 2, 3, 4, 3, 3,"2023-1-1");
+        Timeline.addYear(2023);
+        Timeline.addGameToYear(testGame, 2023);
+        assertEquals(true, Timeline.getTimeline().get(0).getGame("Manchester United vs. Glasborough on 2023-1-1") != null);
     }
     /**
-     * Test if a game is retrieved correctly
-     * @author Robert Engel, T03, Feb 28, 2022
+     * Tests if a CSV file is created correctly
      * */
     @Test
-    void getGameDataTest() {
+    void createCsvTest(){
+        File tester = new File("testData.csv");
+        if(tester.isFile() == true){
+            tester.delete();
+            System.out.println("File deleted for retesting!");
+        }
         Menu.testData();
-        //assertArrayEquals(Main.Year.get("2020").get("Manchester vs. Glasborough on 2020-1-1"), Main.getGameData(2020, "Manchester vs. Glasborough on 2020-1-1"));
+        csvIo.createCsv("testData");
+        assertEquals(true, tester.isFile());
+    }
+    /**
+     * Tests if a CSV file is loaded correctly
+     * */
+    @Test
+    void loadCsvTest(){
+        Menu.testData();
+        csvIo.createCsv("testData");
+        csvIo.loadCsv("testData.csv");
+        assertEquals(false, Timeline.getTimeline().isEmpty());
     }
 }
