@@ -59,7 +59,7 @@ public class Timeline {
         ArrayList<String> allGames = new ArrayList<String>();
         for (int i = 0; i < games.size(); i++) {
             for (int j = 0; j < games.get(i).getGameList().size(); j++) {
-                allGames.add(String.valueOf(games.get(i).getGameList().get(j).getId()));
+                allGames.add(games.get(i).getGameList().get(j).getId());
             }
         }
         return allGames;
