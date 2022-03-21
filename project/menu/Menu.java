@@ -102,12 +102,12 @@ public abstract class Menu {
     public static void mainMenu() {
         int choice = 0;
         System.out.println("Welcome to the Premier League Database Main Menu!\nPlease Input a number to choose your action");
-        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Activate Test Data\n6. Quit the program");
+        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Activate Test Data\n6. Load/Save data from a CSV\n7. Quit the program");
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
                 choice = input.nextInt();
-                if (choice < 1 || choice > 6) {
+                if (choice < 1 || choice > 7) {
                     choice = 0;
                     System.out.println("Invalid Input, Please Try again!");
                 }
@@ -134,6 +134,8 @@ public abstract class Menu {
                 mainMenu();
                 break;
             case 6:
+                csvMenu();
+            case 7:
                 input.close();
                 System.exit(0);
                 break;
@@ -452,7 +454,47 @@ public abstract class Menu {
                 break;
         }
     }
-
+    public static void csvMenu(){
+        System.out.println("Please Input a Number to choose your action");
+        System.out.println("1.Create a CSV file from the current data in the file\n2.Load a CSV file\n3.Return to the Main Menu");
+        int choice = 0;
+        while (choice == 0) {
+            try {
+                System.out.print("Please Input a number:");
+                choice = input.nextInt();
+                if (choice < 1 || choice > 3) {
+                    choice = 0;
+                    System.out.println("Invalid Input, Please Try again!");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input! Please Try Again!");
+                input.next();
+            }
+            switch (choice) {
+                case 1:
+                    System.out.print("Please input a filename (it must not already exist):");
+                    String newFileName = input.next();
+                    csvIo.createCsv(newFileName);
+                    csvMenu();
+                    break;
+                case 2:
+                    String loadedFileName = "";
+                    while (loadedFileName.equals("") == true){
+                        System.out.print("Please Input a filename (It must end with the .csv extension):");
+                        loadedFileName = input.next();
+                        if(loadedFileName.substring(loadedFileName.length()-4, loadedFileName.length()).equals(".csv") == false){
+                            System.out.println("Error! File did not end with .csv!");
+                        }
+                }
+                    csvIo.loadCsv(loadedFileName);
+                    csvMenu();
+                    break;
+                case 3:
+                    mainMenu();
+                    break;
+            }
+        }
+    }
     /**
      * Creates a bunch of test data within the program, for demo purposes
      *
