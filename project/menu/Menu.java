@@ -101,8 +101,8 @@ public abstract class Menu {
      */
     public static void mainMenu() {
         int choice = 0;
-        System.out.println("Welcome to the Premier League Database project.Main Menu!\nPlease Input a number to choose your action");
-        System.out.println("1. Add a new project.data.Year\n2. Add a new project.data.Game to a project.data.Year\n3. General Output Menu\n4. Special Output Menu\n5. Activate Test Data\n6. Quit the program");
+        System.out.println("Welcome to the Premier League Database Main Menu!\nPlease Input a number to choose your action");
+        System.out.println("1. Add a new Year\n2. Add a new Game to a Year\n3. General Output Menu\n4. Special Output Menu\n5. Activate Test Data\n6. Quit the program");
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
@@ -147,7 +147,7 @@ public abstract class Menu {
         int choice = 0;
         while (choice == 0) {
             try {
-                System.out.print("Please Input the project.data.Year:");
+                System.out.print("Please Input the Year:");
                 choice = input.nextInt();
                 if (choice < 1000 || choice > 9999) {
                     choice = 0;
@@ -344,7 +344,7 @@ public abstract class Menu {
      */
     public static void generalMenu() {
         System.out.println("Please Input a Number to choose your action");
-        System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the project.Main Menu");
+        System.out.println("1.Print the total number of shots in a game\n2.Print the total number of fouls in a game\n3.Print all years in the database\n4.Print all the games in a year\n5.Print all games in the database\n6.Return to the Main Menu");
         int choice = 0;
         String[] GameFound;
         while (choice == 0) {
@@ -413,7 +413,7 @@ public abstract class Menu {
      */
     public static void specialMenu() {
         System.out.println("Please Input a Number to choose your action");
-        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for shots\n3.Print the top 5 games for goals\n4.Print how many games ended in a tie\n5.Return to the project.Main Menu");
+        System.out.println("1.Print the top 5 games for fouls\n2.Print the top 5 games for shots\n3.Print the top 5 games for goals\n4.Print how many games ended in a tie\n5.Return to the Main Menu");
         int choice = 0;
         while (choice == 0) {
             try {
