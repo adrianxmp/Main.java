@@ -55,7 +55,7 @@ public abstract class Output extends Menu {
      */
     public static List<Integer> getTopFiveFouls() {
         ArrayList<Year> timelineList = Timeline.getTimeline();
-        ArrayList<Integer> fouls = new ArrayList<Integer>();
+        ArrayList<Integer> fouls = new ArrayList<>();
         for (int i = 0; i < timelineList.size(); i++) {
             for (int j = 0; j < timelineList.get(i).getGameList().size(); j++) {
                 fouls.add(timelineList.get(i).getGameList().get(j).getHomeFouls());
@@ -72,18 +72,17 @@ public abstract class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top five shots in all the games played
      */
-    public static List<String> getTopFiveShots() {
-        ArrayList<String> timelineList = new ArrayList<>();
-        ArrayList<String> shots = new ArrayList<>();
-        timelineList.add(String.valueOf(Timeline.getTimeline()));
+    public static List<Integer> getTopFiveShots() {
+        ArrayList<Year> timelineList = Timeline.getTimeline();
+        ArrayList<Integer> shots = new ArrayList<>();
         for (int i = 0; i < timelineList.size(); i++) {
-            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
-                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeShots()));
-                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayShots()));
+            for (int j = 0; j < timelineList.get(i).getGameList().size(); j++) {
+                shots.add(timelineList.get(i).getGameList().get(j).getHomeShots());
+                shots.add(timelineList.get(i).getGameList().get(j).getAwayShots());
             }
         }
         Collections.sort(shots, Collections.reverseOrder());
-        List<String> topFiveShots = shots.subList(0, 5);
+        List<Integer> topFiveShots = shots.subList(0, 5);
         return topFiveShots;
     }
 
@@ -92,18 +91,17 @@ public abstract class Output extends Menu {
      * @author Adrian Ponce, T03, March 20,2022
      * Gets the Top Five Goals in all the games played
      */
-    public static List<String> getTopFiveGoals() {
-        ArrayList<String> timelineList = new ArrayList<>();
-        ArrayList<String> goals = new ArrayList<>();
-        timelineList.add(String.valueOf(Timeline.getTimeline()));
+    public static List<Integer> getTopFiveGoals() {
+        ArrayList<Year> timelineList = Timeline.getTimeline();
+        ArrayList<Integer> goals = new ArrayList<>();
         for (int i = 0; i < timelineList.size(); i++) {
-            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
-                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeGoals()));
-                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayGoals()));
+            for (int j = 0; j < timelineList.get(i).getGameList().size(); j++) {
+                goals.add(timelineList.get(i).getGameList().get(j).getHomeGoals());
+                goals.add(timelineList.get(i).getGameList().get(j).getAwayGoals());
             }
         }
         Collections.sort(goals, Collections.reverseOrder());
-        List<String> topFiveGoals = goals.subList(0, 5);
+        List<Integer> topFiveGoals = goals.subList(0, 5);
         return topFiveGoals;
     }
 
