@@ -102,12 +102,12 @@ public abstract class Menu {
     public static void mainMenu() {
         int choice = 0;
         System.out.println("Welcome to the Premier League Database project.Main Menu!\nPlease Input a number to choose your action");
-        System.out.println("1. Add a new project.data.Year\n2. Add a new project.data.Game to a project.data.Year\n3. General Output Menu\n4. Special Output Menu\n5. Quit the program");
+        System.out.println("1. Add a new project.data.Year\n2. Add a new project.data.Game to a project.data.Year\n3. General Output Menu\n4. Special Output Menu\n5. Activate Test Data\n6. Quit the program");
         while (choice == 0) {
             try {
                 System.out.print("Please Input a number:");
                 choice = input.nextInt();
-                if (choice < 1 || choice > 5) {
+                if (choice < 1 || choice > 6) {
                     choice = 0;
                     System.out.println("Invalid Input, Please Try again!");
                 }
@@ -130,6 +130,8 @@ public abstract class Menu {
                 specialMenu();
                 break;
             case 5:
+                testData();
+            case 6:
                 input.close();
                 System.exit(0);
                 break;
@@ -361,16 +363,16 @@ public abstract class Menu {
         switch (choice) {
             case 1:
                 GameFound = findGame();
-                //System.out.println("The game had " + totalShots(Integer.parseInt(GameFound[1]), GameFound[0]) + " shots");
+                System.out.println("The game had " + Output.getShots(Integer.parseInt(GameFound[1]), GameFound[0]) + " shots");
                 generalMenu();
                 break;
             case 2:
                 GameFound = findGame();
-                //System.out.println("The game had " + totalFouls(Integer.parseInt(GameFound[1]), GameFound[0]) + " fouls");
+                System.out.println("The game had " + Output.getFouls(Integer.parseInt(GameFound[1]), GameFound[0]) + " fouls");
                 generalMenu();
                 break;
             case 3:
-                //System.out.println(allYears());
+                System.out.println(Timeline.getAllYears());
                 generalMenu();
                 break;
             case 4:
@@ -391,12 +393,12 @@ public abstract class Menu {
                 int gameYear = choice;
                 Year checkYear = new Year(gameYear);
                 if (Timeline.getTimeline().contains(checkYear)) {
-                    //System.out.println("All games for " + gameYear + " are " + allGameYears(Integer.toString(gameYear)));
+                    System.out.println("All games for " + gameYear + " are " + Timeline.getAllGameInAYear(gameYear));
                 }
                 generalMenu();
                 break;
             case 5:
-                //System.out.println(allGamesEverPlayed());
+                System.out.println(Timeline.getAllGamesEverPlayed());
                 generalMenu();
                 break;
             case 6:
@@ -428,19 +430,19 @@ public abstract class Menu {
         }
         switch (choice) {
             case 1:
-                //System.out.println("The top 5 amount of fouls in a game are " + topTeamFouls());
+                System.out.println("The top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
                 specialMenu();
                 break;
             case 2:
-                //System.out.println("The top 5 amount of shots in a game are " + topTeamShots());
+                System.out.println("The top 5 amount of shots in a game are " + Output.getTopFiveShots());
                 specialMenu();
                 break;
             case 3:
-                //System.out.println("The top 5 amount of goals in a game are " + topTeamGoals());
+                System.out.println("The top 5 amount of goals in a game are " + Output.getTopFiveGoals());
                 specialMenu();
                 break;
             case 4:
-                //System.out.println(gamesWithATie() + " Games ended in a tie");
+                System.out.println(Output.getGamesWithATie() + " Games ended in a tie");
                 specialMenu();
                 break;
             case 5:
@@ -454,7 +456,7 @@ public abstract class Menu {
      *
      * @author Robert Engel, T03, Feb 28 2022
      */
-    public void testData(){
+    public static void testData(){
         Timeline.addYear(2020);
         Timeline.addYear(2021);
         Timeline.addYear(2022);

@@ -8,7 +8,7 @@ public class Timeline {
      *Gets the ints representing all Years in the timeline
      * @return a List of Integers showing all years
      */
-    public ArrayList<Integer> getAllYears(){
+    public static ArrayList<Integer> getAllYears(){
         ArrayList<Integer> yearList = new ArrayList<Integer>();
         for(int i = 0; i < timeline.size(); i++){
             yearList.add(i, timeline.get(i).yearNumber);
@@ -43,7 +43,7 @@ public class Timeline {
      * @return Returns a list of all the games within the year provided
      */
 
-    public ArrayList<ArrayList<Game>> getAllGameInAYear(int yearNumber){
+    public static ArrayList<ArrayList<Game>> getAllGameInAYear(int yearNumber){
         ArrayList<ArrayList<Game>> yearList = new ArrayList<>();
         yearList.add(Timeline.getYear(yearNumber).getGameList());
         return yearList;
@@ -54,7 +54,7 @@ public class Timeline {
      * Gets all the games ever played
      * @return Returns a list of all the games ever played
      */
-    public ArrayList<String> getAllGamesEverPlayed() {
+    public static ArrayList<String> getAllGamesEverPlayed() {
         ArrayList<String> games = new ArrayList<>();
         ArrayList<String> allGames = new ArrayList<>();
         games.add(String.valueOf(Timeline.getTimeline()));
