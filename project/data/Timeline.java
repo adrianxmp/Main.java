@@ -55,7 +55,7 @@ public class Timeline {
     /**
      * @author Adrian Ponce, T03, March 20,2022
      * Gets all the games ever played
-     * @return Returns a list of all the games ever played
+     * @return Returns a list of all the games ever played.
      */
     public static ArrayList<String> getAllGamesEverPlayed() {
         ArrayList<Year> games = Timeline.getTimeline();
