@@ -2,8 +2,7 @@ package project;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import project.data.Timeline;
 import project.menu.*;
@@ -13,107 +12,106 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
-     * Test to find the total fouls in a game on 2022-1-3
+     * @author Adrian Ponce, March 20, 2022, T03
+     * Test to find the total fouls in a game on 2020-1-1
      */
     @Test
     void totalFoulsTest() {
         Menu.testData();
-        assertEquals(62, Output.getFouls(2022, "Manchester United vs. Glasborough on 2022-1-3"));
+        assertEquals(3, Output.getFouls(2020, "Manchester United vs. Glasborough on 2020-1-1"));
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
+     * @author Adrian Ponce, March 20, 2022, T03
      * Test to find the total fouls in a game on 2020-1-2
      */
     @Test
     void totalFoulsTestOnADifferentGame() {
         Menu.testData();
-        //assertEquals(57, Main.totalFouls(2020, "Manchester vs. Glasborough on 2020-1-2"));
+        assertEquals(11, Output.getFouls(2020, "Manchester United vs. Glasborough on 2020-1-2"));
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
-     * Test to find the total shots in a game on 2021-1-3
+     * @author Adrian Ponce, March 20, 2022, T03
+     * Test to find the total shots in a game on 2021-1-1
      */
     @Test
     void totalShotsTest() {
         Menu.testData();
-        //assertEquals(39, Main.totalShots(2021, "Manchester vs. Glasborough on 2021-1-3"));
+        assertEquals(23, Output.getShots(2021, "Manchester United vs. Glasborough on 2021-1-1"));
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
+     * @author Adrian Ponce, March 20, 2022, T03
      * Test to find the total shots in a game on 2020-1-1
      */
     @Test
     void totalShotsTestOnDifferentGame() {
         Menu.testData();
-        //assertEquals(29, Output.getShots(2020, "Manchester United vs. Glasborough on 2020-1-1"));
+        assertEquals(7, Output.getShots(2020, "Manchester United vs. Glasborough on 2020-1-1"));
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
-     * Test to find the total shots in a game on 2020-1-1
+     * @author Adrian Ponce, March 20, 2022, T03
+     * Test to find the top five team goals
      */
     @Test
     void topTeamGoalsTest() {
         Menu.testData();
-        List<String> expectedList = new ArrayList<>();
-        expectedList.add("9");
-        expectedList.add("9");
-        expectedList.add("8");
-        expectedList.add("8");
-        expectedList.add("7");
+        List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(12);
+        expectedList.add(11);
+        expectedList.add(10);
+        expectedList.add(9);
+        expectedList.add(8);
         assertArrayEquals(expectedList.toArray(), Output.getTopFiveGoals().toArray());
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
+     * @author Adrian Ponce, March 20, 2022, T03
      * Test to find the top 5 team fouls commited
      */
     @Test
     void topTeamFoulsTest() {
         Menu.testData();
-        List<String> expectedList = new ArrayList<>();
-        expectedList.add("41");
-        expectedList.add("40");
-        expectedList.add("39");
-        expectedList.add("38");
-        expectedList.add("37");
-        //assertArrayEquals(expectedList.toArray(), Main.topTeamFouls().toArray());
+        List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(22);
+        expectedList.add(21);
+        expectedList.add(18);
+        expectedList.add(17);
+        expectedList.add(14);
+        assertArrayEquals(expectedList.toArray(), Output.getTopFiveFouls().toArray());
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
+     * @author Adrian Ponce, March 20, 2022, T03
      * Test to find the top 5 team shots
      */
     @Test
     void topTeamShotsTest() {
         Menu.testData();
-        List<String> expectedList = new ArrayList<>();
-        expectedList.add("26");
-        expectedList.add("25");
-        expectedList.add("24");
-        expectedList.add("23");
-        expectedList.add("22");
-        //assertArrayEquals(expectedList.toArray(), Main.topTeamShots().toArray());
+        List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(24);
+        expectedList.add(23);
+        expectedList.add(20);
+        expectedList.add(19);
+        expectedList.add(16);
+        assertArrayEquals(expectedList.toArray(), Output.getTopFiveShots().toArray());
     }
 
     /**
-     * @author Adrian Ponce, Feb 28, 2022, T03
+     * @author Adrian Ponce, March 20, 2022, T03
      * Test to find the tally of the games ended in a tie
      */
     @Test
     void gamesWithATie() {
         Menu.testData();
-        int x = 3;
-        //assertEquals(3, Main.gamesWithATie());
+        assertEquals(2, Output.getGamesWithATie());
     }
 
     /**
      * Test if a year is added correctly
-     * @author Robert Engel, T03, Feb 28, 2022
+     * @author Robert Engel, T03, March 20, 2022
      * */
     @Test
     void addYearTest() {
