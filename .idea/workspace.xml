@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Initial GUI Commit (Deleted copies, etc.)">
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Initial GUI Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +23,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27VFuQAnpVQVonEcWTEMn1b2Yf6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,6 +51,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="project-gui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="project-gui" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
