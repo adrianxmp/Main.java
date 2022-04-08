@@ -4,53 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Initial GUI Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-robert-engel-and-adrian-ponce.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo 2 UML.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/project-robert-engel-and-adrian-ponce.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/lib/opentest4j-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/MainTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/data/Game$Winner.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/data/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/data/Timeline.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/data/Year.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/menu/Menu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/menu/Output.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/project/menu/csvio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/project-robert-engel-and-adrian-ponce/testData.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/data/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/data/Timeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/data/Year.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/menu/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/menu/csvIo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Initial GUI Commit (Deleted copies, etc.)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649397754395</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial GUI Commit">
+      <created>1649398065697</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649398065697</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial GUI Commit (Deleted copies, etc.)">
+      <created>1649398279909</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649398279909</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial GUI Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial GUI Commit" />
+    <MESSAGE value="Initial GUI Commit (Deleted copies, etc.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial GUI Commit (Deleted copies, etc.)" />
   </component>
 </project>
