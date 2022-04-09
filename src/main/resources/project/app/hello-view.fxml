@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.app.HelloController">
    <children>
       <MenuBar prefHeight="22.0" prefWidth="907.0">
         <menus>
@@ -37,26 +37,26 @@
                <children>
                   <AnchorPane layoutX="36.0" prefHeight="119.0" prefWidth="208.0">
                      <children>
-                        <TextField layoutX="29.0" layoutY="47.0" promptText="Year Number" />
-                        <Button layoutX="70.0" layoutY="79.0" mnemonicParsing="false" text="Add Year!" />
+                        <TextField fx:id="yearNumberInput" layoutX="29.0" layoutY="47.0" promptText="Year Number" />
+                        <Button layoutX="70.0" layoutY="79.0" mnemonicParsing="false" onMouseClicked="#addYearAction" text="Add Year!" />
                         <Label layoutX="79.0" layoutY="14.0" text="Add Year" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="36.0" layoutY="119.0" prefHeight="254.0" prefWidth="208.0">
                      <children>
                         <Label layoutX="74.0" layoutY="5.0" text="Add Game" />
-                        <TextField layoutX="103.0" layoutY="61.0" prefHeight="26.0" prefWidth="104.0" promptText="Name" />
-                        <TextField layoutY="61.0" prefHeight="26.0" prefWidth="104.0" promptText="Name" />
-                        <TextField layoutY="87.0" prefHeight="26.0" prefWidth="104.0" promptText="Fouls" />
-                        <TextField layoutX="103.0" layoutY="87.0" prefHeight="26.0" prefWidth="104.0" promptText="Fouls" />
+                        <TextField fx:id="awayTeamNameInput" layoutX="103.0" layoutY="61.0" prefHeight="26.0" prefWidth="104.0" promptText="Name" />
+                        <TextField fx:id="homeTeamNameInput" layoutY="61.0" prefHeight="26.0" prefWidth="104.0" promptText="Name" />
+                        <TextField fx:id="homeFoulsInput" layoutY="87.0" prefHeight="26.0" prefWidth="104.0" promptText="Fouls" />
+                        <TextField fx:id="awayFoulsInput" layoutX="103.0" layoutY="87.0" prefHeight="26.0" prefWidth="104.0" promptText="Fouls" />
                         <Label layoutX="10.0" layoutY="32.0" text="Home Team" />
                         <Label layoutX="119.0" layoutY="32.0" text="Away Team" />
-                        <TextField layoutX="104.0" layoutY="114.0" prefHeight="26.0" prefWidth="104.0" promptText="Shots" />
-                        <TextField layoutY="114.0" prefHeight="26.0" prefWidth="104.0" promptText="Shots" />
-                        <TextField layoutX="104.0" layoutY="139.0" prefHeight="26.0" prefWidth="104.0" promptText="Goals" />
-                        <TextField layoutY="139.0" prefHeight="26.0" prefWidth="104.0" promptText="Goals" />
-                        <TextField layoutX="58.0" layoutY="165.0" prefHeight="26.0" prefWidth="92.0" promptText="Date" />
-                        <Button layoutX="66.0" layoutY="206.0" mnemonicParsing="false" text="Add Game!" />
+                        <TextField fx:id="awayShotsInput" layoutX="104.0" layoutY="114.0" prefHeight="26.0" prefWidth="104.0" promptText="Shots" />
+                        <TextField fx:id="homeShotsInput" layoutY="114.0" prefHeight="26.0" prefWidth="104.0" promptText="Shots" />
+                        <TextField fx:id="awayGoalsInput" layoutX="104.0" layoutY="139.0" prefHeight="26.0" prefWidth="104.0" promptText="Goals" />
+                        <TextField fx:id="homeGoalsInput" layoutY="139.0" prefHeight="26.0" prefWidth="104.0" promptText="Goals" />
+                        <TextField fx:id="gameDateInput" layoutX="58.0" layoutY="165.0" prefHeight="26.0" prefWidth="92.0" promptText="Date" />
+                        <Button layoutX="66.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addGameAction" text="Add Game!" />
                      </children>
                   </AnchorPane>
                </children>
