@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="onAboutClick, more fx id stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="start of onLoadClick, game equals now ignores case">
       <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/menu/csvIo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/menu/csvIo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649564575291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="start of onLoadClick, game equals now ignores case">
+      <created>1649565272041</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649565272041</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +146,7 @@
     <MESSAGE value="Minor fixes on GUI Layout" />
     <MESSAGE value="fx ids added, Initialize created" />
     <MESSAGE value="onAboutClick, more fx id stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="onAboutClick, more fx id stuff" />
+    <MESSAGE value="start of onLoadClick, game equals now ignores case" />
+    <option name="LAST_COMMIT_MESSAGE" value="start of onLoadClick, game equals now ignores case" />
   </component>
 </project>

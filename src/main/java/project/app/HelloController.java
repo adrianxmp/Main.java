@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -48,15 +49,31 @@ public class HelloController {
     @FXML
     public void initialize(){
         displayStatus.setText("");
+        errorStatus.setTextFill(Paint.valueOf("RED"));
         errorStatus.setText("");
     }
     @FXML
     private void onSaveClick(){
-
+        int successCheck = project.menu.csvIo.createCsv("data");
+        if(successCheck == 1){
+            displayStatus.setText("File Saved Successfully!");
+        }
+        else{
+            errorStatus.setText("Error! Something went wrong!");
+        }
     }
     @FXML
     private void onSaveAsClick(){
-
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        String filename = fileChooser.showSaveDialog(stage).getName();
+        int successCheck = project.menu.csvIo.createCsv(filename);
+        if(successCheck == 1){
+            displayStatus.setText("File Saved Successfully!");
+        }
+        else{
+            errorStatus.setText("Error! Something went wrong!");
+        }
     }
     @FXML
     private void onAboutClick(){
@@ -74,7 +91,13 @@ public class HelloController {
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         String filename = fileChooser.showSaveDialog(stage).getName();
-        project.menu.csvIo.loadCsv(filename);
+        int successCheck = project.menu.csvIo.loadCsv(filename);
+        if(successCheck == 1){
+            displayStatus.setText("File Loaded Successfully!");
+        }
+        else{
+            errorStatus.setText("Error! Something went wrong!");
+        }
     }
 
 }
