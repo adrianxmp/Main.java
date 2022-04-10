@@ -78,7 +78,7 @@ public class HelloController {
     void getAllGamesYearAction(MouseEvent event) {
         int year = Integer.parseInt(generalYearInput.getText());
         try {
-            display.setText("All games for" + year + "are" + Timeline.getAllGameInAYear(year).toString());
+            display.setText("All games for" + year + "are" + Timeline.getAllGameInAYear(year));
         }catch (NumberFormatException e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
@@ -119,6 +119,7 @@ public class HelloController {
      */
     @FXML
     public void initialize(){
+        displayStatus.setTextFill(Paint.valueOf("GREEN"));
         displayStatus.setText("");
         errorStatus.setTextFill(Paint.valueOf("RED"));
         errorStatus.setText("");
