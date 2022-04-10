@@ -93,8 +93,22 @@ public class HelloController {
     }
     @FXML
     void getTopFoulsAction(MouseEvent event) {
-        display.setText("\nThe top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
-        displayStatus.setText("Success! Top 5 fouls obtained!");
+        display.setText("\nThe Top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
+        displayStatus.setText("Success! Top 5 fouls recovered!");
+    }
+    @FXML
+    void getTopGoalsAction(MouseEvent event) {
+        display.setText("\nThe Top 5 amount of goals in a game are " + Output.getTopFiveGoals());
+        displayStatus.setText("Success! Top 5 goals recovered!");
+    }
+    @FXML
+    void getTopShotsAction(MouseEvent event) {
+        display.setText("\nThe Top 5 amount of shots in a game are " + Output.getTopFiveShots());
+        displayStatus.setText("Success! Top 5 shots recovered!");
+    }
+    @FXML
+    void getTieGamesAction(MouseEvent event) {
+
     }
 
     /**
