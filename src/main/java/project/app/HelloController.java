@@ -70,8 +70,8 @@ public class HelloController {
         if (Timeline.getAllYears().isEmpty()) {
             errorStatus.setText("Error! No Year found!");
         }else
-            display.setText(Timeline.getAllYears().toString());
             displayStatus.setText("Success! Got all years!");
+            display.setText(Timeline.getAllYears().toString());
     }
     @FXML
     void getAllGamesYearAction(MouseEvent event) {
@@ -81,7 +81,14 @@ public class HelloController {
         }catch (NumberFormatException e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
-
+    }
+    @FXML
+    void getAllGamesEverAction(MouseEvent event) {
+        if (Timeline.getAllGamesEverPlayed().isEmpty()) {
+            errorStatus.setText("Error! No game Found!");
+        } else
+            displayStatus.setText("Success! Got all the games ever played!");
+            display.setText(Timeline.getAllGamesEverPlayed().toString());
     }
 
     /**

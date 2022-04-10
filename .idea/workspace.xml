@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Added getallyears function, fxid fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="added get all games within a year">
       <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649567974048</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="try and catch error fix, get all years">
+      <created>1649569077859</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1649569077859</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added get all games within a year">
+      <created>1649569128245</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1649569128245</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +185,8 @@
     <MESSAGE value="start of onLoadClick, game equals now ignores case" />
     <MESSAGE value="onSave and onSaveAsClick" />
     <MESSAGE value="Added getallyears function, fxid fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added getallyears function, fxid fixes" />
+    <MESSAGE value="try and catch error fix, get all years" />
+    <MESSAGE value="added get all games within a year" />
+    <option name="LAST_COMMIT_MESSAGE" value="added get all games within a year" />
   </component>
 </project>
