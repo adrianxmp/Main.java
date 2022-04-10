@@ -73,6 +73,16 @@ public class HelloController {
             display.setText(Timeline.getAllYears().toString());
             displayStatus.setText("Success! Got all years!");
     }
+    @FXML
+    void getAllGamesYearAction(MouseEvent event) {
+        int year = Integer.parseInt(generalYearInput.getText());
+        try {
+            display.setText(Timeline.getAllGameInAYear(year).toString());
+        }catch (NumberFormatException e){
+            errorStatus.setText("Error! Invalid input! Please try again!");
+        }
+
+    }
 
     /**
      * General GUI setup stuff
