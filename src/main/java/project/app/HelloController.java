@@ -11,6 +11,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import project.data.Game;
 import project.data.Timeline;
 
 public class HelloController {
@@ -32,14 +33,35 @@ public class HelloController {
     @FXML public Label errorStatus;
     @FXML public Label displayStatus;
 
+    /**
+     * Adds a year to the data structure
+     * @author Robert Engel AND Adrian Ponce, T03, April 9 2022
+     */
     @FXML
     void addYearAction(MouseEvent event) {
-        Timeline.addYear(Integer.parseInt(yearNumberInput.getText()));
-    }
+        try{
+            Timeline.addYear(Integer.parseInt(yearNumberInput.getText()));
+            displayStatus.setText("Year added Successfully!");
+        }
+        catch(NumberFormatException e){
+            errorStatus.setText("Error, Invalid Input! Please try Again!");
+        }
 
+    }
+    /**
+     * Adds a game to the data structure
+     * @author Robert Engel, T03, April 9 2022
+     */
     @FXML
     void addGameAction(MouseEvent event) {
-
+        try{
+            Game game = new Game(homeTeamNameInput.getText(),awayTeamNameInput.getText(),Integer.parseInt(homeFoulsInput.getText()),Integer.parseInt(awayFoulsInput.getText()),Integer.parseInt(homeShotsInput.getText()),Integer.parseInt(awayShotsInput.getText()),Integer.parseInt(homeGoalsInput.getText()),Integer.parseInt(awayGoalsInput.getText()),gameDateInput.getText());
+            Game.addGameToYear(game, Integer.parseInt(gameDateInput.getText().substring(0, 4)));
+            displayStatus.setText("Game Added successfully!");
+        }
+        catch(NumberFormatException e){
+            errorStatus.setText("Error, Invalid Input! Please try Again!");
+        }
     }
     /**
      * General GUI setup stuff
@@ -51,7 +73,12 @@ public class HelloController {
         displayStatus.setText("");
         errorStatus.setTextFill(Paint.valueOf("RED"));
         errorStatus.setText("");
+        display.setText("");
     }
+    /**
+     * Saves the current data in the program to 'data.csv'
+     * @author Robert Engel, T03, April 9 2022
+     */
     @FXML
     private void onSaveClick(){
         int successCheck = project.menu.csvIo.createCsv("data");
@@ -62,6 +89,10 @@ public class HelloController {
             errorStatus.setText("Error! Something went wrong!");
         }
     }
+    /**
+     * Saves the current data in the program to the chosen filename
+     * @author Robert Engel, T03, April 9 2022
+     */
     @FXML
     private void onSaveAsClick(){
         Stage stage = new Stage();
@@ -75,6 +106,10 @@ public class HelloController {
             errorStatus.setText("Error! Something went wrong!");
         }
     }
+    /**
+     * Gives a short description and its creators (myself and Adrian)
+     * @author Robert Engel, T03, April 9 2022
+     */
     @FXML
     private void onAboutClick(){
         Text text = new Text();
@@ -86,6 +121,10 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
+    /**
+     * Loads a given CSV file, if it is of the correct type, it will load the data from the CSV into the program
+     * @author Robert Engel, T03, April 9 2022
+     */
     @FXML
     private void onLoadClick(){
         Stage stage = new Stage();

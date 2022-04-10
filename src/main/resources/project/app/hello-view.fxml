@@ -62,7 +62,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="334.0">
                <children>
                   <Label layoutX="27.0" layoutY="14.0" prefWidth="49.0" text="View" />
-                  <TextArea fx:id="display" layoutX="43.0" layoutY="61.0" prefHeight="206.0" prefWidth="248.0" />
+                  <TextArea fx:id="display" layoutX="43.0" layoutY="61.0" mouseTransparent="true" prefHeight="206.0" prefWidth="248.0" />
                   <Label fx:id="errorStatus" layoutY="383.0" text="Error Status" />
                   <Label fx:id="displayStatus" layoutX="268.0" layoutY="379.0" text="Display Status" />
                </children>
