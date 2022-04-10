@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import project.data.Game;
 import project.data.Timeline;
 
+import java.util.ArrayList;
+
 public class HelloController {
     @FXML private TextField homeFoulsInput;
     @FXML private TextField homeGoalsInput;
@@ -63,6 +65,15 @@ public class HelloController {
             errorStatus.setText("Error, Invalid Input! Please try Again!");
         }
     }
+    @FXML
+    void getAllYearsAction(MouseEvent event) {
+        ArrayList<Integer> allYears = Timeline.getAllYears();
+        if (Timeline.getAllYears().isEmpty()) {
+            errorStatus.setText("Error! No Year found!");
+        }else display.setText(Timeline.getAllYears().toString());
+    }
+
+
     /**
      * General GUI setup stuff
      * @author Robert Engel, T03, April 9 2022

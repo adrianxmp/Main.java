@@ -74,7 +74,7 @@
                         <Label layoutX="59.0" layoutY="5.0" text="General Output" />
                         <Button layoutX="23.0" layoutY="109.0" mnemonicParsing="false" text="Get Shots!" />
                         <Button layoutX="94.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" text="Get Fouls!" />
-                        <Button layoutX="52.0" layoutY="154.0" mnemonicParsing="false" text="Get all Years!" />
+                        <Button layoutX="52.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#getAllYearsAction" text="Get all Years!" />
                         <Button layoutX="29.0" layoutY="206.0" mnemonicParsing="false" text="Get all Games in a Year!" />
                         <Button layoutX="41.0" layoutY="232.0" mnemonicParsing="false" text="Get all Games Ever!" />
                         <TextField fx:id="generalYearInput" layoutX="25.0" layoutY="180.0" promptText="Year" />
