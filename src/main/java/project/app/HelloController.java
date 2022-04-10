@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import project.data.Game;
 import project.data.Timeline;
+import project.menu.Output;
 
 import java.util.ArrayList;
 
@@ -77,7 +78,7 @@ public class HelloController {
     void getAllGamesYearAction(MouseEvent event) {
         int year = Integer.parseInt(generalYearInput.getText());
         try {
-            display.setText(Timeline.getAllGameInAYear(year).toString());
+            display.setText("All games for" + year + "are" + Timeline.getAllGameInAYear(year).toString());
         }catch (NumberFormatException e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
@@ -89,6 +90,11 @@ public class HelloController {
         } else
             displayStatus.setText("Success! Got all the games ever played!");
             display.setText(Timeline.getAllGamesEverPlayed().toString());
+    }
+    @FXML
+    void getTopFoulsAction(MouseEvent event) {
+        display.setText("\nThe top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
+        displayStatus.setText("Success! Top 5 fouls obtained!");
     }
 
     /**
