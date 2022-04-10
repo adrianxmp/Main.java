@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Basic GUI layout (no xml)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="fx ids added, Initialize created">
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649400866391</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fx ids added, Initialize created">
+      <created>1649564190032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649564190032</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +129,7 @@
     <MESSAGE value="Initial GUI Commit" />
     <MESSAGE value="Initial GUI Commit (Deleted copies, etc.)" />
     <MESSAGE value="Minor fixes on GUI Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes on GUI Layout" />
+    <MESSAGE value="fx ids added, Initialize created" />
+    <option name="LAST_COMMIT_MESSAGE" value="fx ids added, Initialize created" />
   </component>
 </project>

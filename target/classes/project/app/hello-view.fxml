@@ -16,18 +16,15 @@
       <MenuBar prefHeight="22.0" prefWidth="907.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveAsClick" text="Save As" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLoadClick" text="Load" />
+               </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#onAboutClick" text="About" />
             </items>
           </Menu>
         </menus>

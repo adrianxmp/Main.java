@@ -1,10 +1,14 @@
 package project.app;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import project.data.Timeline;
 
 public class HelloController {
@@ -45,6 +49,28 @@ public class HelloController {
         displayStatus.setText("");
         errorStatus.setText("");
     }
+    @FXML
+    private void onSaveClick(){
 
+    }
+    @FXML
+    private void onSaveAsClick(){
+
+    }
+    @FXML
+    private void onAboutClick(){
+        Text text = new Text();
+        text.setText("Author: Robert Engel and Adrian Ponce\nVersion:" + Main.version + "\nThis is a Premier League Data Tracker");
+        VBox vbox = new VBox(text);
+        Scene scene = new Scene(vbox, 300, 50);
+        Stage stage = new Stage();
+        stage.setTitle("About");
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    private void onLoadClick(){
+
+    }
 
 }
