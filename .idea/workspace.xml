@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="fx ids added, Initialize created">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="onAboutClick, more fx id stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/menu/csvIo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/menu/csvIo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649564190032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="onAboutClick, more fx id stuff">
+      <created>1649564575291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649564575291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +139,7 @@
     <MESSAGE value="Initial GUI Commit (Deleted copies, etc.)" />
     <MESSAGE value="Minor fixes on GUI Layout" />
     <MESSAGE value="fx ids added, Initialize created" />
-    <option name="LAST_COMMIT_MESSAGE" value="fx ids added, Initialize created" />
+    <MESSAGE value="onAboutClick, more fx id stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="onAboutClick, more fx id stuff" />
   </component>
 </project>

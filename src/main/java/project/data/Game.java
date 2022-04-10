@@ -36,7 +36,7 @@ public Game(String newhome, String newaway, int newHomeFouls, int newAwayFouls, 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Game) {
-            if (this.id.equals(((Game) obj).id) == true) {
+            if (this.id.equalsIgnoreCase(((Game) obj).id) == true) {
                 return true;
             }
         }

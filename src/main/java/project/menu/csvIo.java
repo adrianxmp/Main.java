@@ -8,8 +8,9 @@ public abstract class csvIo extends Menu{
     /**
      * Creates a CSV file from the currently loaded data inside the program
      * @param filename the name of the file, INCLUDING the .csv part of the name
+     * @return 0 if loading failed, 1 if it was successful
      */
-    static public void loadCsv(String filename){
+    static public int loadCsv(String filename){
         File newFile = new File(filename);
         Scanner input = null;
         if(newFile.isFile() == true){
@@ -41,20 +42,22 @@ public abstract class csvIo extends Menu{
                         }
                     }
                     System.out.println("CSV Successfully loaded!");
+                    return 1;
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
         else{
             System.out.println("Error! File does not exist!");
+            return 0;
         }
-
+        return 0;
     }
     /**
      * Creates a csv from the current values in the Timeline class
      * @param filename the name of the file to be created, EXCLUDING the .csv (it's added below)
      */
-    static public void createCsv(String filename){
+    static public int createCsv(String filename){
         File newFile = new File(filename+".csv");
         if(newFile.isFile() == false){
             try {
@@ -77,12 +80,15 @@ public abstract class csvIo extends Menu{
                 }
                 writer.flush();
                 System.out.println("CSV Successfully saved!");
+                return 1;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         else{
             System.out.println("File already exists! Please create a new file!");
+            return 0;
         }
+        return 0;
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import project.data.Timeline;
 
@@ -27,8 +28,8 @@ public class HelloController {
     @FXML private TextField generalDateInput;
     @FXML private TextField generalYearInput;
     @FXML private TextArea display;
-    @FXML private Label errorStatus;
-    @FXML private Label displayStatus;
+    @FXML public Label errorStatus;
+    @FXML public Label displayStatus;
 
     @FXML
     void addYearAction(MouseEvent event) {
@@ -70,7 +71,10 @@ public class HelloController {
     }
     @FXML
     private void onLoadClick(){
-
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        String filename = fileChooser.showSaveDialog(stage).getName();
+        project.menu.csvIo.loadCsv(filename);
     }
 
 }
