@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Added addYear action and fx ids, Minor fxml fixes">
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Added getallyears function, fxid fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649565835547</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added getallyears function, fxid fixes">
+      <created>1649567974048</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1649567974048</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +170,7 @@
     <MESSAGE value="onAboutClick, more fx id stuff" />
     <MESSAGE value="start of onLoadClick, game equals now ignores case" />
     <MESSAGE value="onSave and onSaveAsClick" />
-    <option name="LAST_COMMIT_MESSAGE" value="onSave and onSaveAsClick" />
+    <MESSAGE value="Added getallyears function, fxid fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getallyears function, fxid fixes" />
   </component>
 </project>

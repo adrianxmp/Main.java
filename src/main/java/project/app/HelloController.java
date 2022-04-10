@@ -67,12 +67,12 @@ public class HelloController {
     }
     @FXML
     void getAllYearsAction(MouseEvent event) {
-        ArrayList<Integer> allYears = Timeline.getAllYears();
         if (Timeline.getAllYears().isEmpty()) {
             errorStatus.setText("Error! No Year found!");
-        }else display.setText(Timeline.getAllYears().toString());
+        }else
+            display.setText(Timeline.getAllYears().toString());
+            displayStatus.setText("Success! Got all years!");
     }
-
 
     /**
      * General GUI setup stuff
