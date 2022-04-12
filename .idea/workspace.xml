@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba326b5f-eccf-4ad9-b8cc-034010d7c0e9" name="Changes" comment="Java doc commenting">
+    <list default="true" id="ba326b5f-eccf-4ad9-b8cc-034010d7c0e9" name="Changes" comment="Wrap text on display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -28,7 +28,9 @@ public class HelloController {
     @FXML private TextField awayGoalsInput;
     @FXML private TextField awayShotsInput;
     @FXML private TextField awayTeamNameInput;
-    @FXML private TextField gameDateInput;
+    @FXML private TextField gameMonthInput;
+    @FXML private TextField gameYearInput;
+    @FXML private TextField gameDayInput;
     @FXML private TextField yearNumberInput;
     @FXML private TextField generalHomeInput;
     @FXML private TextField generalAwayInput;
@@ -62,8 +64,9 @@ public class HelloController {
     @FXML
     void addGameAction(MouseEvent event) {
         try{
-            Game game = new Game(homeTeamNameInput.getText(),awayTeamNameInput.getText(),Integer.parseInt(homeFoulsInput.getText()),Integer.parseInt(awayFoulsInput.getText()),Integer.parseInt(homeShotsInput.getText()),Integer.parseInt(awayShotsInput.getText()),Integer.parseInt(homeGoalsInput.getText()),Integer.parseInt(awayGoalsInput.getText()),gameDateInput.getText());
-            Game.addGameToYear(game, Integer.parseInt(gameDateInput.getText().substring(0, 4)));
+            String date = Integer.parseInt(gameYearInput.getText()) + "-" + Integer.parseInt(gameMonthInput.getText()) + "-" + Integer.parseInt(gameDayInput.getText());
+            Game game = new Game(homeTeamNameInput.getText(),awayTeamNameInput.getText(),Integer.parseInt(homeFoulsInput.getText()),Integer.parseInt(awayFoulsInput.getText()),Integer.parseInt(homeShotsInput.getText()),Integer.parseInt(awayShotsInput.getText()),Integer.parseInt(homeGoalsInput.getText()),Integer.parseInt(awayGoalsInput.getText()),date);
+            Game.addGameToYear(game, Integer.parseInt(date.substring(0, 4)));
             displayStatus.setText("Game Added successfully!");
         }
         catch(NumberFormatException e){
@@ -290,6 +293,10 @@ public class HelloController {
         else{
             errorStatus.setText("Error! Something went wrong!");
         }
+    }
+    @FXML
+    private void onQuitClick(){
+        System.exit(0);
     }
 
 }
