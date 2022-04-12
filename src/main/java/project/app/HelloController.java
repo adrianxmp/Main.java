@@ -76,9 +76,8 @@ public class HelloController {
     }
     @FXML
     void getAllGamesYearAction(MouseEvent event) {
-        int year = Integer.parseInt(generalYearInput.getText());
         try {
-            display.setText("All games for" + year + "are" + Timeline.getAllGameInAYear(year));
+            display.setText("All games for" + Integer.parseInt(generalYearInput.getText()) + "are" + Timeline.getAllGameInAYear(Integer.parseInt(generalYearInput.getText())));
         }catch (NumberFormatException e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
@@ -93,18 +92,30 @@ public class HelloController {
     }
     @FXML
     void getTopFoulsAction(MouseEvent event) {
-        display.setText("The Top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
-        displayStatus.setText("Success! Top 5 fouls recovered!");
+        try {
+            display.setText("The Top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
+            displayStatus.setText("Success! Top 5 fouls recovered!");
+        } catch (Exception e) {
+            errorStatus.setText("Error! Please try again!");
+        }
     }
     @FXML
     void getTopGoalsAction(MouseEvent event) {
-        display.setText("The Top 5 amount of goals in a game are " + Output.getTopFiveGoals());
-        displayStatus.setText("Success! Top 5 goals recovered!");
+        try {
+            display.setText("The Top 5 amount of goals in a game are " + Output.getTopFiveGoals());
+            displayStatus.setText("Success! Top 5 goals recovered!");
+        } catch (Exception e) {
+            errorStatus.setText("Error! Please try again!");
+        }
     }
     @FXML
     void getTopShotsAction(MouseEvent event) {
-        display.setText("The Top 5 amount of shots in a game are " + Output.getTopFiveShots());
-        displayStatus.setText("Success! Top 5 shots recovered!");
+        try {
+            display.setText("The Top 5 amount of shots in a game are " + Output.getTopFiveShots());
+            displayStatus.setText("Success! Top 5 shots recovered!");
+        } catch (Exception e) {
+            errorStatus.setText("Error! Please try again!");
+        }
     }
     @FXML
     void getTieGamesAction(MouseEvent event) {
