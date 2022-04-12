@@ -132,7 +132,7 @@ public class HelloController {
     void getFoulsAction(MouseEvent event) {
         try {
             String date = Integer.parseInt(generalOutputYear.getText()) + "-" + Integer.parseInt(generalOutputMonth.getText()) + "-" + Integer.parseInt(generalOutputDay.getText());
-            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date;
+            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date +"\r";
             display.setText("The game had " + Output.getFouls(Integer.parseInt(generalOutputYear.getText()), gameID) + " fouls");
             displayStatus.setText("Got Fouls Successfully!");
         } catch (NumberFormatException e) {
@@ -144,7 +144,7 @@ public class HelloController {
     void getShotsAction(MouseEvent event) {
         try {
             String date = Integer.parseInt(generalOutputYear.getText()) + "-" + Integer.parseInt(generalOutputMonth.getText()) + "-" + Integer.parseInt(generalOutputDay.getText());
-            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date;
+            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date +"\r";
             display.setText("The game had " + Output.getShots(Integer.parseInt(generalOutputYear.getText()), gameID) + " shots");
             displayStatus.setText("Got Shots Successfully!");
         } catch (NumberFormatException e) {
