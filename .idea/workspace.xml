@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="added get top shots and fouls">
+    <list default="true" id="29e0bfd3-5a97-437b-bce7-350757f8e260" name="Changes" comment="Minor fix on display output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/app/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/app/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/HelloController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/app/hello-view.fxml" afterDir="false" />
     </list>
@@ -212,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649731584641</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Minor fix on display output">
+      <created>1649733059515</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1649733059515</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +253,7 @@
     <MESSAGE value="Minor changes in fxml and controller" />
     <MESSAGE value="minor controller fixes" />
     <MESSAGE value="added get top shots and fouls" />
-    <option name="LAST_COMMIT_MESSAGE" value="added get top shots and fouls" />
+    <MESSAGE value="Minor fix on display output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fix on display output" />
   </component>
 </project>

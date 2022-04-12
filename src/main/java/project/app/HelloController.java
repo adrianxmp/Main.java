@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import project.data.Game;
 import project.data.Timeline;
 import project.data.Year;
+import project.menu.Menu;
 import project.menu.Output;
 
 import java.util.ArrayList;
@@ -80,9 +81,9 @@ public class HelloController {
     @FXML
     void getAllGamesYearAction(MouseEvent event) {
         try {
-            display.setText("All games for" + Integer.parseInt(generalYearInput.getText()) + "are" + Timeline.getAllGameInAYear(Integer.parseInt(generalYearInput.getText())));
+            display.setText("All games for " + Integer.parseInt(generalYearInput.getText()) + " are:\n" + Timeline.getAllGameInAYear(Integer.parseInt(generalYearInput.getText())));
             displayStatus.setText("Got all games in year successfully!");
-        }catch (NumberFormatException e){
+        }catch (Exception e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
     }
@@ -107,7 +108,7 @@ public class HelloController {
     void getTopGoalsAction(MouseEvent event) {
         try {
             display.setText("The Top 5 amount of goals in a game are:\n" + Output.getTopFiveGoals());
-            displayStatus.setText("Got Top 5 fouls successfully!");
+            displayStatus.setText("Got Top 5 goals successfully!");
         } catch (Exception e) {
             errorStatus.setText("Error! Please try again!");
         }
@@ -137,13 +138,12 @@ public class HelloController {
         } catch (NumberFormatException e) {
             errorStatus.setText("Error, Invalid Input! Please try Again!");
         }
-
     }
 
     @FXML
     void getShotsAction(MouseEvent event) {
         try {
-            int date = Integer.parseInt(generalOutputYear.getText()) +  Integer.parseInt(generalOutputMonth.getText()) + Integer.parseInt(generalOutputDay.getText());
+            String date = Integer.parseInt(generalOutputYear.getText()) + "-" + Integer.parseInt(generalOutputMonth.getText()) + "-" + Integer.parseInt(generalOutputDay.getText());
             String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date;
             display.setText("The game had " + Output.getShots(Integer.parseInt(generalOutputYear.getText()), gameID) + " shots");
             displayStatus.setText("Got Shots Successfully!");

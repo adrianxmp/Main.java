@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.app.HelloController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.app.HelloController">
    <children>
       <MenuBar prefHeight="22.0" prefWidth="907.0">
         <menus>
@@ -63,12 +63,12 @@
             <AnchorPane prefHeight="200.0" prefWidth="334.0">
                <children>
                   <Label layoutX="27.0" layoutY="14.0" prefWidth="49.0" text="View" />
-                  <TextArea fx:id="display" layoutX="43.0" layoutY="61.0" mouseTransparent="true" prefHeight="254.0" prefWidth="261.0" />
+                  <TextArea fx:id="display" layoutX="16.0" layoutY="61.0" mouseTransparent="true" prefHeight="254.0" prefWidth="366.0" />
                   <Label fx:id="errorStatus" layoutY="383.0" text="Error Status" />
                   <Label fx:id="displayStatus" layoutX="268.0" layoutY="379.0" text="Display Status" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="250.0">
+            <AnchorPane prefHeight="200.0" prefWidth="322.0">
                <children>
                   <AnchorPane layoutX="33.0" layoutY="14.0" prefHeight="272.0" prefWidth="200.0">
                      <children>
