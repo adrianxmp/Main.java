@@ -53,8 +53,8 @@ public class HelloController {
         catch(NumberFormatException e){
             errorStatus.setText("Error, Invalid Input! Please try Again!");
         }
-
     }
+
     /**
      * Adds a game to the data structure
      * @author Robert Engel, T03, April 9 2022
@@ -70,6 +70,12 @@ public class HelloController {
             errorStatus.setText("Error, Invalid Input! Please try Again!");
         }
     }
+
+    /**
+     * Action button that gets all the years and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getAllYearsAction(MouseEvent event) {
         if (Timeline.getAllYears().isEmpty()) {
@@ -78,6 +84,12 @@ public class HelloController {
             displayStatus.setText("Got all years successfully!");
             display.setText(Timeline.getAllYears().toString());
     }
+
+    /**
+     * Action button that gets all the games in a year and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getAllGamesYearAction(MouseEvent event) {
         try {
@@ -87,6 +99,12 @@ public class HelloController {
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
     }
+
+    /**
+     * Action button that gets all the game ever played and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getAllGamesEverAction(MouseEvent event) {
         if (Timeline.getAllGamesEverPlayed().isEmpty()) {
@@ -95,6 +113,12 @@ public class HelloController {
             displayStatus.setText("Got all the games ever played successfully!");
             display.setText(Timeline.getAllGamesEverPlayed().toString());
     }
+
+    /**
+     * Action button that gets the top 5 fouls and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getTopFoulsAction(MouseEvent event) {
         try {
@@ -104,6 +128,12 @@ public class HelloController {
             errorStatus.setText("Error! Please try again!");
         }
     }
+
+    /**
+     * Action button that gets the top 5 goals and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getTopGoalsAction(MouseEvent event) {
         try {
@@ -113,6 +143,12 @@ public class HelloController {
             errorStatus.setText("Error! Please try again!");
         }
     }
+
+    /**
+     * Action button that gets the top 5 shots and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getTopShotsAction(MouseEvent event) {
         try {
@@ -122,12 +158,23 @@ public class HelloController {
             errorStatus.setText("Error! Please try again!");
         }
     }
+
+    /**
+     * Action button that gets all the game that ended in a tie and displays it in the view box
+     * @author Adrian Ponce, T03, April 11 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getTieGamesAction(MouseEvent event) {
         display.setText(Output.getGamesWithATie() + " Games ended in a tie");
         displayStatus.setText("Got Tie Games successfully!");
     }
 
+    /**
+     * Get fouls button action that displays all the fouls taken in the game
+     * @author Adrian Ponce AND Robert Engel, April 11, 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getFoulsAction(MouseEvent event) {
         try {
@@ -140,6 +187,11 @@ public class HelloController {
         }
     }
 
+    /**
+     * Get shots button action that displays all the shots taken in the game
+     * @author Adrian Ponce AND Robert Engel, April 11, 2022
+     * @param event Mouse Click
+     */
     @FXML
     void getShotsAction(MouseEvent event) {
         try {
