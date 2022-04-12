@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import project.menu.csvIo;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -19,6 +19,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        if(args.length > 0){
+            csvIo.loadCsv(args[1]);
+        }
         launch();
     }
 }

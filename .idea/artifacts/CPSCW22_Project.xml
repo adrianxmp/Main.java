@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CPSCW22 Project">
+    <output-path>$PROJECT_DIR$/out/artifacts/CPSCW22_Project</output-path>
+    <root id="archive" name="CPSCW22 Project.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
