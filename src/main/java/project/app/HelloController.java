@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import project.data.Game;
 import project.data.Timeline;
+import project.data.Year;
 import project.menu.Output;
 
 import java.util.ArrayList;
@@ -30,7 +31,9 @@ public class HelloController {
     @FXML private TextField yearNumberInput;
     @FXML private TextField generalHomeInput;
     @FXML private TextField generalAwayInput;
-    @FXML private TextField generalDateInput;
+    @FXML private TextField generalOutputYear;
+    @FXML private TextField generalOutputMonth;
+    @FXML private TextField generalOutputDay;
     @FXML private TextField generalYearInput;
     @FXML private TextArea display;
     @FXML public Label errorStatus;
@@ -71,13 +74,14 @@ public class HelloController {
         if (Timeline.getAllYears().isEmpty()) {
             errorStatus.setText("Error! No Year found!");
         }else
-            displayStatus.setText("Success! Got all years!");
+            displayStatus.setText("Got all years successfully!");
             display.setText(Timeline.getAllYears().toString());
     }
     @FXML
     void getAllGamesYearAction(MouseEvent event) {
         try {
             display.setText("All games for" + Integer.parseInt(generalYearInput.getText()) + "are" + Timeline.getAllGameInAYear(Integer.parseInt(generalYearInput.getText())));
+            displayStatus.setText("Got all games in year successfully!");
         }catch (NumberFormatException e){
             errorStatus.setText("Error! Invalid input! Please try again!");
         }
@@ -87,14 +91,14 @@ public class HelloController {
         if (Timeline.getAllGamesEverPlayed().isEmpty()) {
             errorStatus.setText("Error! No game Found!");
         } else
-            displayStatus.setText("Success! Got all the games ever played!");
+            displayStatus.setText("Got all the games ever played successfully!");
             display.setText(Timeline.getAllGamesEverPlayed().toString());
     }
     @FXML
     void getTopFoulsAction(MouseEvent event) {
         try {
             display.setText("The Top 5 amount of fouls in a game are " + Output.getTopFiveFouls());
-            displayStatus.setText("Success! Top 5 fouls recovered!");
+            displayStatus.setText("Got Top 5 fouls successfully!");
         } catch (Exception e) {
             errorStatus.setText("Error! Please try again!");
         }
@@ -103,7 +107,7 @@ public class HelloController {
     void getTopGoalsAction(MouseEvent event) {
         try {
             display.setText("The Top 5 amount of goals in a game are " + Output.getTopFiveGoals());
-            displayStatus.setText("Success! Top 5 goals recovered!");
+            displayStatus.setText("Got Top 5 fouls successfully!");
         } catch (Exception e) {
             errorStatus.setText("Error! Please try again!");
         }
@@ -112,7 +116,7 @@ public class HelloController {
     void getTopShotsAction(MouseEvent event) {
         try {
             display.setText("The Top 5 amount of shots in a game are " + Output.getTopFiveShots());
-            displayStatus.setText("Success! Top 5 shots recovered!");
+            displayStatus.setText("Got Top 5 shots successfully!");
         } catch (Exception e) {
             errorStatus.setText("Error! Please try again!");
         }
@@ -120,8 +124,34 @@ public class HelloController {
     @FXML
     void getTieGamesAction(MouseEvent event) {
         display.setText(Output.getGamesWithATie() + " Games ended in a tie");
-        displayStatus.setText("Success! Games ended in tie recovered!");
+        displayStatus.setText("Got Tie Games successfully!!");
     }
+
+    @FXML
+    void getFoulsAction(MouseEvent event) {
+        try {
+            int date = Integer.parseInt(generalOutputYear.getText()) +  Integer.parseInt(generalOutputMonth.getText()) + Integer.parseInt(generalOutputDay.getText());
+            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date;
+            display.setText("The game had" + Output.getFouls(Integer.parseInt(generalOutputYear.getText()), gameID) + " fouls");
+            displayStatus.setText("Got Fouls Successfully!");
+        } catch (NumberFormatException e) {
+            errorStatus.setText("Error, Invalid Input! Please try Again!");
+        }
+
+    }
+
+    @FXML
+    void getShotsAction(MouseEvent event) {
+        try {
+            int date = Integer.parseInt(generalOutputYear.getText()) +  Integer.parseInt(generalOutputMonth.getText()) + Integer.parseInt(generalOutputDay.getText());
+            String gameID = generalHomeInput.getText() + " vs. " + generalAwayInput.getText() + " on " + date;
+            display.setText("The game had" + Output.getShots(Integer.parseInt(generalOutputYear.getText()), gameID) + " shots");
+            displayStatus.setText("Got Shots Successfully!");
+        } catch (NumberFormatException e) {
+            errorStatus.setText("Error, Invalid Input! Please try Again!");
+        }
+    }
+
 
     /**
      * General GUI setup stuff
