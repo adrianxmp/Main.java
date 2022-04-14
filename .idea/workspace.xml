@@ -81,7 +81,7 @@
       <recent name="project.app" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.totalFoulsTestOnADifferentGame">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="project.app.Main" />
       <module name="project-gui" />
@@ -129,9 +129,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MainTest.totalFoulsTestOnADifferentGame" />
         <item itemvalue="JUnit.MainTest.totalFoulsTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
