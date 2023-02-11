@@ -1,0 +1,68 @@
+Index: project/menu/Output.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package project.menu;\r\n\r\nimport project.data.Timeline;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\n\r\npublic class Output extends Menu{\r\n\r\n    public static int getShots(int gameYear, String gameID){\r\n        int homeShots;\r\n        int awayShots;\r\n        homeShots = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeShots();\r\n        awayShots = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayShots();\r\n        int totalShots = homeShots + awayShots;\r\n        return totalShots;\r\n    }\r\n    public static int getFouls(int gameYear, String gameID){\r\n        int homeFouls;\r\n        int awayFouls;\r\n        homeFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getHomeFouls();\r\n        awayFouls = Objects.requireNonNull(Timeline.getYear(gameYear)).getGame(gameID).getAwayFouls();\r\n        int totalFouls = homeFouls + awayFouls;\r\n        return totalFouls;\r\n    }\r\n\r\n    public static List<String> topFouls() {\r\n        ArrayList<String> timelineList = new ArrayList<>();\r\n        ArrayList<String> fouls = new ArrayList<>();\r\n        timelineList.add(String.valueOf(Timeline.getTimeline()));\r\n        for (int i = 0; i < timelineList.size(); i++) {\r\n            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {\r\n                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeFouls()));\r\n                fouls.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayFouls()));\r\n            }\r\n        }\r\n        Collections.sort(fouls, Collections.reverseOrder());\r\n        List<String> topFiveFouls = fouls.subList(0, 5);\r\n        return topFiveFouls;\r\n    }\r\n\r\n    public static List<String> topShots() {\r\n        ArrayList<String> timelineList = new ArrayList<>();\r\n        ArrayList<String> shots = new ArrayList<>();\r\n        for (int i = 0; i < timelineList.size(); i++) {\r\n            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {\r\n                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeShots()));\r\n                shots.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayShots()));\r\n            }\r\n        }\r\n        Collections.sort(shots, Collections.reverseOrder());\r\n        List<String> topFiveShots = shots.subList(0, 5);\r\n        return topFiveShots;\r\n    }\r\n\r\n    public static List<String> topGoals(){\r\n        ArrayList<String> timelineList = new ArrayList<>();\r\n        ArrayList<String> goals = new ArrayList<>();\r\n        for (int i = 0; i < timelineList.size(); i++) {\r\n            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {\r\n                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getHomeGoals()));\r\n                goals.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).getAwayGoals()));\r\n            }\r\n        }\r\n        Collections.sort(goals, Collections.reverseOrder());\r\n        List<String> topFiveGoals = goals.subList(0, 5);\r\n        return topFiveGoals;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project/menu/Output.java b/project/menu/Output.java
+--- a/project/menu/Output.java	(revision 42df4b4fa563f5bdda0c73a59f1e9335e2fa4ada)
++++ b/project/menu/Output.java	(date 1647660251923)
+@@ -1,5 +1,6 @@
+ package project.menu;
+ 
++import project.data.Game;
+ import project.data.Timeline;
+ 
+ import java.util.ArrayList;
+@@ -68,5 +69,14 @@
+         List<String> topFiveGoals = goals.subList(0, 5);
+         return topFiveGoals;
+     }
+-
+-}
++    public static List<String> gamesWithATie(){
++        ArrayList<String> timelineList = new ArrayList<>();
++        ArrayList<String> gameOutcome = new ArrayList<>();
++        int tieGameCounter = 0;
++        for (int i = 0; i < timelineList.size(); i++) {
++            for (int j = 0; j < Timeline.getYear(i).getGameList().size(); j++) {
++                gameOutcome.add(String.valueOf(Timeline.getYear(i).getGameList().get(j).get(Game.Winner.TIE);
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: project/data/Total.java
+===================================================================
+diff --git a/project/data/Total.java b/project/data/Total.java
+deleted file mode 100644
+--- a/project/data/Total.java	(revision 42df4b4fa563f5bdda0c73a59f1e9335e2fa4ada)
++++ /dev/null	(revision 42df4b4fa563f5bdda0c73a59f1e9335e2fa4ada)
+@@ -1,26 +0,0 @@
+-package project.data;
+-
+-import java.util.ArrayList;
+-
+-public class Total extends Year{
+-    private static final ArrayList<String>shotsData = new ArrayList<>();
+-    private static final ArrayList<String>foulsData = new ArrayList<>();
+-    private static int shots, fouls;
+-    private final String stringTotalShots = "The Home Team total shot is" + shots;
+-
+-    public static int getShots(int gameYear, String gameChecker){
+-        Year year = new Year(gameYear);
+-        shotsData.add(String.valueOf(year.getGame(gameChecker)));
+-        shots = Integer.parseInt(shotsData.get(4)) + Integer.parseInt(shotsData.get(5));
+-        return shots;
+-        }
+-
+-    public static int getFouls(int gameYear, String gameChecker) {
+-        Year year = new Year(gameYear);
+-        foulsData.add(String.valueOf(year.getGame(gameChecker)));
+-        fouls = Integer.parseInt(foulsData.get(2)) + Integer.parseInt(foulsData.get(3));
+-        return fouls;
+-    }
+-
+-}
+-

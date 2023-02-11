@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3dbf7a39-2966-444c-9cfe-eaa5edb6be2f" name="Changes" comment="Javadoc commenting" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="25Y13gS21bVdNUtfAuy2Sr1iQGK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="project-robert-engel-and-adrian-ponce" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.TestDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-robert-engel-and-adrian-ponce" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="TestDataTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.addGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-robert-engel-and-adrian-ponce" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="addGameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.gamesWithATie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-robert-engel-and-adrian-ponce" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="gamesWithATie" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.getGameDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project-robert-engel-and-adrian-ponce" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="getGameDataTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MainTest.addGameTest" />
+        <item itemvalue="JUnit.MainTest.TestDataTest" />
+        <item itemvalue="JUnit.MainTest.getGameDataTest" />
+        <item itemvalue="JUnit.MainTest.gamesWithATie" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dbf7a39-2966-444c-9cfe-eaa5edb6be2f" name="Changes" comment="" />
+      <created>1645689007811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645689007811</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added totalShots function and tootalFouls function">
+      <created>1645689151965</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645689151965</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added allYears function and allGameYears function">
+      <created>1645689354285</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645689354285</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added javadoc commenting on the functions that I made">
+      <created>1645690137240</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645690137240</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added allGamesEverPlayed function and added some additional javadoc commenting">
+      <created>1645777429898</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645777429898</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added all top5's Functions (Not Finished yet still need to clean data for each)">
+      <created>1645873485596</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645873485596</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Finished all special outputs except topTeamWins">
+      <created>1645916845868</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645916845868</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created Total class, added getShots method">
+      <created>1647578265457</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647578265457</updated>
+    </task>
+    <task id="LOCAL-00008" summary="In Total class, added getFouls method">
+      <created>1647579761757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647579761757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Redid getShots and getFouls">
+      <created>1647587586375</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647587586375</updated>
+    </task>
+    <task id="LOCAL-00010" summary="In Output class, added topFouls method">
+      <created>1647658220874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647658220874</updated>
+    </task>
+    <task id="LOCAL-00011" summary="In Output class, added topShots method">
+      <created>1647658305103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647658305103</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added topGoals method to the Output Class">
+      <created>1647658549120</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647658549120</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added getAllGameInAYear method in the Timeline class">
+      <created>1647665475711</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647665475711</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added getAllGameEverPlayed method in the Timeline class">
+      <created>1647666328198</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647666328198</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added getGamesWithATie method in the Output class">
+      <created>1647762186182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1647762186182</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added getGameWinner">
+      <created>1647762249253</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1647762249253</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Minor output class changes">
+      <created>1647762373460</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1647762373460</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Javadoc commenting">
+      <created>1647763285808</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1647763285809</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added totalShots function and tootalFouls function" />
+    <MESSAGE value="Added allYears function and allGameYears function" />
+    <MESSAGE value="Added javadoc commenting on the functions that I made" />
+    <MESSAGE value="Added allGamesEverPlayed function and added some additional javadoc commenting" />
+    <MESSAGE value="Added all top5's Functions (Not Finished yet still need to clean data for each)" />
+    <MESSAGE value="Finished all special outputs except topTeamWins" />
+    <MESSAGE value="Created Total class, added getShots method" />
+    <MESSAGE value="In Total class, added getFouls method" />
+    <MESSAGE value="Redid getShots and getFouls" />
+    <MESSAGE value="In Output class, added topFouls method" />
+    <MESSAGE value="In Output class, added topShots method" />
+    <MESSAGE value="Added topGoals method to the Output Class" />
+    <MESSAGE value="Added getAllGameInAYear method in the Timeline class" />
+    <MESSAGE value="Added getAllGameEverPlayed method in the Timeline class" />
+    <MESSAGE value="Added getGamesWithATie method in the Output class" />
+    <MESSAGE value="Added getGameWinner" />
+    <MESSAGE value="Minor output class changes" />
+    <MESSAGE value="Javadoc commenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc commenting" />
+  </component>
+</project>

@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba326b5f-eccf-4ad9-b8cc-034010d7c0e9" name="Changes" comment="Bugfix on get shots and fouls, GUI fxml minor changes">
+    <list default="true" id="ba326b5f-eccf-4ad9-b8cc-034010d7c0e9" name="Changes" comment="Added MainTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-gui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project-gui.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
